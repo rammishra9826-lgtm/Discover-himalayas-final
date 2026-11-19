@@ -5,6 +5,7 @@
 .logoBlock { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 .logo { height: 110px; width: auto; display: block; }
 .descriptor { font-size: 14px; color: var(--mute); }
+.credit { font-size: 13px; color: var(--mute); margin-top: -8px; }
 .contact { line-height: 1.6; }
 .news { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
 .news span { display: flex; gap: 8px; }

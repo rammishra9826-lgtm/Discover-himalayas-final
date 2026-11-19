@@ -8,3 +8,47 @@
 .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px; }
 .strip :global(*) { font-size: 12px; }
 .note { font-size: 16px; color: var(--text-2); margin: 12px 0 0; max-width: 60ch; }
+
+/* ---- Video thumbnail (YouTube) ---- */
+.thumb { position: relative; display: block; width: 100%; aspect-ratio: 1 / 1; padding: 0; margin: 0; border: 0; border-radius: 6px; overflow: hidden; background: #2b3a45; cursor: pointer; }
+.thumb:focus-visible { outline: 3px solid var(--lake-deep); outline-offset: 2px; }
+.thumbImg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.thumb:hover .thumbImg { transform: scale(1.08); }
+.thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0) 55%); pointer-events: none; }
+.playCircle { position: absolute; top: 50%; left: 50%; z-index: 2; width: 72px; height: 72px; margin: -36px 0 0 -36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,.92); color: #1b1b1b; box-shadow: 0 4px 16px rgba(0,0,0,.3); transition: transform .25s ease, background .25s ease; }
+.playCircle svg { margin-left: 3px; }
+.thumb:hover .playCircle { transform: scale(1.12); background: #fff; }
+.thumbLabel { position: absolute; left: 12px; bottom: 12px; z-index: 2; padding: 4px 8px; border-radius: 3px; background: rgba(43,58,69,.88); color: #fff; font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+
+/* ---- Side panel (slide-in from right) ---- */
+.overlay { position: fixed; inset: 0; z-index: 1000; display: flex; justify-content: flex-end; background: rgba(0,0,0,.55); animation: fadeIn .3s ease forwards; }
+.overlayOut { animation: fadeOut .3s ease forwards; }
+
+.panel { position: relative; width: min(620px, 100%); height: 100%; overflow-y: auto; background: #fff; box-shadow: -12px 0 40px rgba(0,0,0,.3); animation: slideIn .4s cubic-bezier(.22,.8,.3,1) forwards; }
+.panelOut { animation: slideOut .3s ease-in forwards; }
+
+.close { position: absolute; top: 12px; right: 12px; z-index: 3; width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgba(255,255,255,.95); color: #111; font-size: 16px; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.3); transition: transform .2s ease; }
+.close:hover { transform: rotate(90deg); }
+
+.player { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.panelInfo { padding: 22px 24px 32px; animation: riseIn .5s .25s ease both; }
+.panelTitle { margin: 4px 0 2px; color: var(--ink); }
+.panelNote { font-size: 16px; color: var(--text-2); margin: 14px 0 18px; }
+.ytLink, .tourLink { display: inline-block; margin-right: 18px; font-family: var(--display); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 14px; color: var(--lake-deep); text-decoration: none; }
+.ytLink:hover, .tourLink:hover { text-decoration: underline; }
+
+@keyframes slideIn  { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes slideOut { from { transform: translateX(0); } to { transform: translateX(100%); } }
+@keyframes fadeIn   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut  { from { opacity: 1; } to { opacity: 0; } }
+@keyframes riseIn   { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 860px) {
+  .panel { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay, .overlayOut, .panel, .panelOut, .panelInfo { animation-duration: .01s; animation-delay: 0s; }
+}

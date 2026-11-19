@@ -25,6 +25,10 @@ export default function Footer() {
             </span>
           </span>
           <span>© {new Date().getFullYear()} {SITE.name}, Naggar, Himachal Pradesh.</span>
+          <span className={styles.credit}>
+            Website developer:{" "}
+            <a href="mailto:rammishra9826@gmail.com">Puneet Mishra</a>
+          </span>
         </div>
 
         <div className={styles.contact}>

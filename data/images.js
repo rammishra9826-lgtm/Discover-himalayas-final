@@ -47,7 +47,7 @@ export const IMAGES = {
       "/images/crew/sahil.jpeg",        // Sahil Kaistha
       null,                             // Surya Kaistha (photo chahiye)
       "/images/crew/jaydeep.jpeg",      // Jaydeep Mishra
-      "/images/crew/uwe-balser.jpeg",   // Uwe Balser
+      "/images/crew/Uwe-balser.jpeg",   // Uwe Balser
       "/images/crew/tony.jpeg",         // Tony
     ],
   },
