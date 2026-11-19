@@ -13,15 +13,15 @@ export const IMAGES = {
   home: {
     heroVideo: "/videos/home/hero-promo.mp4",   // 16:9 drone video (.mp4)
     gallery: [
-      "/images/home/pangong-shoreline-bikes.JPG",    // 1 wide
-      "/images/home/prayer-flags-khardung-la.JPG",   // portrait
-      "/images/home/rider-portrait-chang-la.JPG",    // portrait
-      "/images/home/Shyok-road-water-crossing.JPG",  // portrait
-      "/images/home/group-tso-moriri-camp.JPG",      // portrait
+      "/images/home/pangong-shoreline-bikes.png",    // 1 wide
+      "/images/home/prayer-flags-khardung-la.png",   // portrait
+      "/images/home/rider-portrait-chang-la.png",    // portrait
+      "/images/home/Shyok-road-water-crossing.png",  // portrait
+      "/images/home/group-tso-moriri-camp.png",      // portrait
     ],                                               // 5 pictures: 1 wide + 4 portrait
-    people: "/images/home/vinod-briefing-dawn.JPG",  // Vinod briefing the group (4:5)
-    fleetWide: "/images/home/buttom.jpg",            // wide photo of the fleet (21:9)
-    custom: "/images/home/a-private-group-on-Zanskar-Kinnaur.JPG",  // private group on an unmarked road (4:5)
+    people: "/images/home/vinod-briefing-dawn.png",  // Vinod briefing the group (4:5)
+    fleetWide: "/images/home/buttom.png",            // wide photo of the fleet (21:9)
+    custom: "/images/home/a-private-group-on-Zanskar-Kinnaur.png",  // private group on an unmarked road (4:5)
   },
   journeys: { hero: "/images/journeys/group-riding-toward-pass-early-morning.png" },
   past: {
