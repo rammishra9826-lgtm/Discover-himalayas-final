@@ -38,7 +38,19 @@ export const IMAGES = {
     support: null,
   },
   about: { hero: null },
-  crew: { hero: null, portraits: [null, null, null, null] },
+  crew: {
+    hero: null,
+    // same order as CREW in data/crew.js
+    portraits: [
+      "/images/crew/vinod.jpeg",        // Vinod Kaistha
+      "/images/crew/nadia.jpeg",        // Nadia Kaistha
+      "/images/crew/sahil.jpeg",        // Sahil Kaistha
+      null,                             // Surya Kaistha (photo chahiye)
+      "/images/crew/jaydeep.jpeg",      // Jaydeep Mishra
+      "/images/crew/uwe balser.jpeg",   // Uwe Balser
+      "/images/crew/tony.jpeg",         // Tony
+    ],
+  },
   // journal: key = post "id" in data/posts.js (hero) ; the card picture uses card
   journal: {
     "khardung-la": { hero: null, card: null },

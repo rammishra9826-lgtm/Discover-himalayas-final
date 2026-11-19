@@ -1,4 +1,4 @@
-// People on the Crew page. Anything in [square brackets] is a placeholder from the client prototype.
+// People on /crew. Order here = order of photos in IMAGES.crew.portraits
 export const CREW = [
   {
     name: "Vinod Kaistha",
@@ -10,6 +10,29 @@ export const CREW = [
     role: "Co-Founder, Guest Relations and Administrative Manager",
     line: "[One line on what Nadia does for riders before and during a journey.]",
   },
-  { name: "Sahil Kaistha", role: "Road Captain and Manager", line: "[One line, in his own words.]" },
-  { name: "Surya Kaistha", role: "Road Captain", line: "[One line, in his own words.]" },
+  {
+    name: "Sahil Kaistha",
+    role: "Road Captain and Manager",
+    line: "[One line, in his own words.]",
+  },
+  {
+    name: "Surya Kaistha",
+    role: "Road Captain",
+    line: "[One line, in his own words.]",
+  },
+  {
+    name: "Jaydeep Mishra",
+    role: "Road Captain and Filmmaker",
+    line: "[One line, in his own words.]",
+  },
+  {
+    name: "Uwe Balser",
+    role: "Road Captain",
+    line: "[One line, in his own words.]",
+  },
+  {
+    name: "Tony",
+    role: "Road Captain",
+    line: "[One line, in his own words.]",
+  },
 ];
