@@ -1,0 +1,2 @@
+.quote { margin: 0; border-left: 4px solid var(--ochre); padding: 4px 0 4px 22px; font-family: var(--body); font-weight: 500; font-size: 19px; line-height: 1.5; max-width: 60ch; }
+.quote cite { display: block; font-style: normal; font-weight: 400; font-size: 14px; color: var(--mute); margin-top: 10px; }

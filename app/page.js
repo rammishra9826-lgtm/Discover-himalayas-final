@@ -1,0 +1,137 @@
+import Link from "next/link";
+import PageHero from "@/components/PageHero/PageHero";
+import MediaFrame from "@/components/MediaFrame/MediaFrame";
+import Band from "@/components/Band/Band";
+import Quote from "@/components/Quote/Quote";
+import FadeIn from "@/components/FadeIn/FadeIn";
+import { IMAGES } from "@/data/images";
+import styles from "./page.module.css";
+
+export default function Home() {
+  const g = IMAGES.home.gallery;
+  return (
+    <>
+      <PageHero
+        src={IMAGES.home.heroVideo}
+        video
+        label="Drone video: rider cresting Khardung La · loops silently"
+        title="Guided motorcycle journeys across India"
+        titleMax="16ch"
+        lead="Small groups, the right bikes for the road, every road ridden by the crew before you."
+        height="max(460px, min(88vh, 760px))"
+      >
+        <Link className="btn ochre" href="/journeys">See the journeys</Link>
+      </PageHero>
+
+      <section className={styles.intro}>
+        <div className="wrap">
+          <p>
+            From the highest passes in Ladakh to the Rajasthan desert, the Goa coast and the tea gardens of Assam. A road
+            captain, a mechanic and support vehicles on every journey. We handle the permits, the hotels and the spares. You ride.
+          </p>
+        </div>
+      </section>
+
+      <section className={styles.tight}>
+        <div className="wrap">
+          <div className={styles.gallery}>
+            <MediaFrame src={g[0]} label="Drone still: Pangong Tso shoreline, bikes in frame" ratio="3:2" sizes="(max-width: 860px) 100vw, 50vw" />
+            <MediaFrame src={g[1]} label="Rider portrait, Chang La" ratio="4:5" sizes="25vw" />
+            <MediaFrame src={g[2]} label="Prayer flags, Khardung La summit" ratio="4:5" sizes="25vw" />
+            <MediaFrame src={g[3]} label="Group at Tso Moriri camp" ratio="4:5" sizes="25vw" />
+            <MediaFrame src={g[4]} label="Shyok road water crossing" ratio="4:5" sizes="25vw" />
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.tight}>
+        <div className="wrap">
+          <FadeIn>
+            <Band image={{ src: IMAGES.home.people, label: "Photo: Vinod briefing the group at dawn", ratio: "4:5" }}>
+              <h2>The people on the ride</h2>
+              <p>We love riding, and we have spent our lives riding these roads with guests: Ladakh, Spiti, Goa and everything in between.</p>
+              <p>
+                The idea hasn't changed: a small group, a road captain who knows every village on the route, a mechanic with the
+                spares, and support vehicles so a pillion can rest or a rider can sit out a hard day. We take care of the detail so you can ride.
+              </p>
+              <p><Link className="more" href="/crew">Meet the crew →</Link></p>
+              <div className={styles.quoteWrap}>
+                <Quote cite="Neil, Germany — Ladakh journey">
+                  Due to Vinod's experience and his open and friendly nature, we got connected to the land and its people in no time wherever we went.
+                </Quote>
+              </div>
+            </Band>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className={styles.tight}>
+        <div className="wrap">
+          <MediaFrame
+            src={IMAGES.home.fleetWide}
+            aspect="21 / 9"
+            label="Wide photo: the fleet lined up on a mountain road, support vehicles behind"
+            ratio="21:9"
+            sizes="100vw"
+          />
+          <div className={`sectionHead ${styles.fleetHead}`}>
+            <div>
+              <h2>The fleet</h2>
+              <p className="lead mute">
+                Bikes chosen for the road we're riding, serviced by our own mechanic, with insurance, fuel, oil and spares included.
+                Support vehicles follow every day with the luggage, and with a seat for anyone who'd rather not ride a stretch.
+              </p>
+            </div>
+            <Link className="more" href="/fleet">See the fleet →</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.tight}>
+        <div className="wrap">
+          <h2>From riders who came back</h2>
+          <div className={styles.testis}>
+            <blockquote className={styles.testi}>
+              "Riding the tour from Ladakh, with my father and my German friends was an experience of a lifetime! Unique monasteries, spectacular views, friendly people… and what a ride."
+              <cite>Neil, Germany</cite>
+            </blockquote>
+            <blockquote className={styles.testi}>
+              "Everything was very well organised and prepared. For sure we all will take this experience along as a treasure for the years to come."
+              <cite>Ladakh group, 2025</cite>
+            </blockquote>
+            {/* PLACEHOLDER from the client prototype: replace with a real Rajasthan / South India review */}
+            <blockquote className={styles.testi}>
+              [Add a Rajasthan or South India review here — ideally one that mentions the roads, the hotels or the food.]
+              <cite>Rider name, country</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.tight}>
+        <div className="wrap">
+          <FadeIn>
+            <Band flip image={{ src: IMAGES.home.custom, label: "Drone still: a private group on an unmarked road — Zanskar or Kinnaur", ratio: "4:5", tone: "green" }}>
+              <div className="kicker">Custom tours</div>
+              <h2 style={{ maxWidth: "16ch" }}>Your group. Your dates. A route drawn for you.</h2>
+              <p>
+                Riding clubs, families, a group of friends, a company offsite on two wheels. Tell us who's riding and how long you
+                have; we chart the route, run the logistics, and ride it with you.
+              </p>
+              <div className="actions" style={{ marginTop: 24 }}>
+                <Link className="btn solid" href="/custom-tours">How custom tours work</Link>
+                <Link className="btn" href="/contact?tour=custom">Start planning</Link>
+              </div>
+            </Band>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className={styles.tight}>
+        <div className={`wrap ${styles.center}`}>
+          <Link className="btn lake" href="/journeys">See the journeys, dates and prices</Link>
+        </div>
+      </section>
+    </>
+  );
+}

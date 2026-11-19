@@ -1,0 +1,4 @@
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.copy p { font-size: 18px; max-width: 66ch; margin: 0 0 18px; }
+.tight { padding-top: 0; }
+@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }

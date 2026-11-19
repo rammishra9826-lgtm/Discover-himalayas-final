@@ -1,0 +1,10 @@
+.tag {
+  display: inline-block; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: .06em;
+  text-transform: uppercase; padding: 3px 9px; border-radius: 2px; background: var(--sky); color: var(--ink); white-space: nowrap;
+}
+.open { background: var(--sky); }
+.full { background: var(--ochre-soft); }
+.request { background: var(--line); color: var(--text); }
+.filling { background: var(--ochre-soft); box-shadow: inset 3px 0 0 var(--ochre); }
+.last { background: var(--sky-2); color: var(--text); }
+@media (max-width: 640px) { .tag { font-size: 13px; } }

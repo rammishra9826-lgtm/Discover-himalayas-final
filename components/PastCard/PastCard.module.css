@@ -1,0 +1,10 @@
+.main { display: block; text-decoration: none; color: #fff; }
+.meta { padding: 14px 0 0; }
+.when { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--lake-deep); }
+.meta h3 { margin: 4px 0 2px; color: var(--ink); }
+.meta h3 a { color: inherit; text-decoration: none; }
+.meta h3 a:hover { color: var(--lake-deep); }
+.who { font-family: var(--display); font-size: 16px; color: var(--mute); }
+.strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px; }
+.strip :global(*) { font-size: 12px; }
+.note { font-size: 16px; color: var(--text-2); margin: 12px 0 0; max-width: 60ch; }

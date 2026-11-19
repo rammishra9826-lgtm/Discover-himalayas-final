@@ -1,0 +1,98 @@
+/* Global styles: design tokens, reset, base typography and the few classes
+   shared by every page (.wrap, .btn, .lead, .mute, .kicker, .more).
+   Everything else lives in a *.module.css next to its component. */
+
+:root {
+  --bone: #FBFAF7; --paper: #FFFFFF; --ink: #26323A; --slate: #8FA3AD; --mute: #66747C;
+  --line: #DDE2E0; --lake: #1F8A99; --lake-deep: #167A88; --ochre: #C4792E; --ochre-soft: #F3E6D4;
+  --sky: #E4EEF2; --sky-2: #CFDFE6; --snow: #FFFFFF;
+  --bg: var(--bone); --surface: var(--paper); --text: var(--ink); --text-2: var(--mute);
+  --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --body: "Barlow", Arial, sans-serif;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html { scroll-padding-top: calc(80px + env(safe-area-inset-top, 0px)); }
+*, *::before, *::after { box-sizing: inherit; }
+
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--body); font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+@media (max-width: 640px) { body { font-size: 16px; } }
+
+h1, h2, h3, h4 { font-family: var(--display); margin: 0; }
+h1 { font-weight: 700; font-size: 72px; line-height: 1; text-transform: uppercase; letter-spacing: .02em; }
+h2 { font-weight: 600; font-size: 40px; line-height: 1.1; text-transform: uppercase; letter-spacing: .02em; }
+h3 { font-weight: 600; font-size: 24px; line-height: 1.2; }
+h4 { font-weight: 600; font-size: 20px; line-height: 1.2; }
+@media (max-width: 640px) {
+  h1 { font-size: 44px; }
+  h2 { font-size: 30px; }
+  h3 { font-size: 20px; }
+}
+b, strong { font-weight: 500; }
+p { margin: 0 0 1em; }
+a { color: var(--lake-deep); }
+img, svg { max-width: 100%; }
+:focus-visible { outline: 2px solid var(--lake-deep); outline-offset: 2px; }
+
+.wrap { width: min(1180px, 100% - 48px); margin-inline: auto; }
+@media (max-width: 640px) { .wrap { width: calc(100% - 32px); } }
+
+section { padding: 72px 0; }
+@media (max-width: 640px) { section { padding: 48px 0; } }
+.flush { padding-top: 0; }
+
+.lead { font-size: 17px; line-height: 1.6; max-width: 62ch; }
+.mute { color: var(--text-2); }
+
+/* Page title used on text-only pages (FAQ, Journal, Contact, Terms, Privacy) */
+.pageTitle { font-size: clamp(40px, 6vw, 72px); }
+
+/* Buttons */
+.btn {
+  display: inline-block; font-family: var(--display); font-weight: 700; font-size: 19px;
+  text-transform: uppercase; letter-spacing: .04em; padding: 12px 22px;
+  border: 2px solid var(--text); color: var(--text); text-decoration: none;
+  background: transparent; cursor: pointer; border-radius: 3px; line-height: 1;
+}
+.btn:hover { opacity: .85; }
+.btn.solid { background: var(--text); color: var(--bg); border-color: var(--ink); }
+.btn.lake { background: var(--lake-deep); border-color: var(--lake-deep); color: #fff; }
+.btn.ochre { background: var(--ochre); border-color: var(--ochre); color: #fff; }
+.btn.ghost { border-color: #fff; color: #fff; }
+.btn.white { border-color: #fff; color: #fff; }
+.btn.white.solid { background: #fff; color: var(--ink); }
+
+/* Small label above headings */
+.kicker {
+  font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--lake-deep); margin-bottom: 12px;
+}
+@media (max-width: 640px) { .kicker { font-size: 13px; } }
+
+/* Text link with underline ("Meet the crew →") */
+.more {
+  display: inline-block; font-family: var(--display); font-size: 18px;
+  text-decoration: none; color: var(--text); border-bottom: 2px solid var(--line);
+}
+.more:hover { border-color: var(--ochre); }
+.more.strong { font-weight: 600; border-bottom-color: currentColor; }
+
+/* Section header: title on the left, optional text/link on the right */
+.sectionHead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 48px; }
+
+/* Yellow-ish note box */
+.note { background: var(--ochre-soft); border-radius: 4px; padding: 14px 18px; font-size: 15.5px; margin: 20px 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Row of buttons */
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }

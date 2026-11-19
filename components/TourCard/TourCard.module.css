@@ -1,0 +1,12 @@
+.tour { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform .2s, box-shadow .2s; }
+.tour:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(38,50,58,.1); }
+.tour:hover h3 { color: var(--lake-deep); }
+.pic { aspect-ratio: 4 / 3; position: relative; overflow: hidden; }
+.region { position: absolute; left: 12px; top: 12px; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; background: var(--bg); color: var(--text); padding: 4px 9px; border-radius: 2px; z-index: 1; }
+.body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--display); font-size: 17px; color: var(--text-2); }
+.meta b { color: var(--text); font-weight: 600; }
+.body p { font-size: 16px; color: var(--text-2); margin: 0; }
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); padding-top: 12px; font-family: var(--display); font-size: 18px; }
+.price { font-weight: 600; font-size: 22px; font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .tour, .tour:hover { transform: none; } }

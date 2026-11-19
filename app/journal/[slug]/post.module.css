@@ -1,0 +1,27 @@
+.section { padding-top: 40px; }
+
+.article { max-width: 38rem; font-size: 17px; line-height: 1.6; }
+.article p { margin: 0 0 22px; }
+.article h3 { margin: 44px 0 14px; }
+.article ol { padding-left: 22px; margin: 0 0 22px; }
+.article li { margin-bottom: 10px; }
+.article figure { margin: 36px 0; width: min(100%, 900px); }
+.article img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.article .ph { aspect-ratio: 16 / 9; position: relative; overflow: hidden; border-radius: 4px; background: linear-gradient(170deg, #9FB6C1, #5C7A88 60%, #3C5461); }
+.article .ph span {
+  position: absolute; left: 16px; bottom: 14px; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: .06em;
+  text-transform: uppercase; color: #fff; background: rgba(0,0,0,.35); padding: 4px 9px; border-radius: 2px; max-width: calc(100% - 32px);
+}
+.article .pull { margin: 44px 0; padding: 0 0 0 24px; border-left: 3px solid var(--ochre); font-family: var(--display); font-weight: 600; font-size: 32px; line-height: 1.2; }
+.article .pull cite { display: block; font-family: var(--body); font-style: normal; font-weight: 400; font-size: 15px; color: var(--text-2); margin-top: 12px; }
+
+.tourcard { display: grid; grid-template-columns: 260px 1fr; gap: 28px; align-items: center; margin-top: 56px; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; text-decoration: none; color: inherit; max-width: 900px; }
+.pic { aspect-ratio: 4 / 3; border-radius: 3px; overflow: hidden; }
+.tourcard h3 { margin: 4px 0 8px; }
+.tourcard p { margin: 0 0 12px; color: var(--text-2); font-size: 16px; }
+.tourcard:hover :global(.more) { border-color: var(--ochre); }
+
+.related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 860px) { .related { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .tourcard { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .article .pull { font-size: 26px; } }

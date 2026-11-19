@@ -1,0 +1,5 @@
+.bikes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.bikes h3 { margin: 14px 0 8px; }
+.bikes p { font-size: 16px; color: var(--text-2); }
+.tight { padding-top: 0; }
+@media (max-width: 860px) { .bikes { grid-template-columns: 1fr; } }

@@ -1,0 +1,42 @@
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); }
+.row { display: flex; align-items: center; justify-content: space-between; height: 80px; gap: 24px; }
+.brand { display: flex; align-items: center; padding: 16px 0; margin-right: 16px; }
+.logo { height: 40px; width: auto; display: block; }
+
+.list { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; align-items: center; }
+.link {
+  position: relative; display: block; font-family: var(--display); font-weight: 600; font-size: 16px; text-transform: uppercase;
+  letter-spacing: .04em; text-decoration: none; color: var(--text); padding: 6px 0;
+}
+.underline { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--ochre); }
+
+.lang {
+  display: flex; gap: 8px; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: .06em;
+  color: var(--mute); padding-left: 14px; border-left: 1px solid var(--line);
+}
+.langOn { color: var(--ink); }
+.lang span[aria-disabled] { opacity: .6; cursor: default; }
+
+.menuBtn {
+  display: none; background: none; border: 2px solid var(--text); border-radius: 3px; padding: 8px 12px; color: var(--text);
+  font-family: var(--display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: .04em; cursor: pointer;
+}
+
+@media (max-width: 1180px) {
+  .list {
+    display: none; position: absolute; left: 0; right: 0; top: 80px; background: var(--bg); border-bottom: 1px solid var(--line);
+    flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 16px;
+  }
+  .open { display: flex; }
+  .link { padding: 12px 0; font-size: 18px; border-bottom: 1px solid var(--line); }
+  .underline { display: none; }
+  .link[aria-current="page"] { border-bottom-color: var(--ochre); }
+  .lang { border-left: 0; padding: 14px 0 0; }
+  .menuBtn { display: block; }
+}
+@media (max-width: 640px) {
+  .row { height: 64px; }
+  .list { top: 64px; padding-inline: 16px; }
+  .brand { padding: 12px 0; }
+  .logo { height: 32px; }
+}

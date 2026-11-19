@@ -1,0 +1,9 @@
+.hero { position: relative; height: var(--h); min-height: 380px; overflow: hidden; background: #3C5461; }
+.shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.6)); pointer-events: none; }
+.copy { position: absolute; left: 0; right: 0; bottom: 0; padding-bottom: 44px; color: #fff; }
+.kicker { font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: var(--ochre-soft); margin-bottom: 14px; }
+.title { color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,.35); }
+.lead { font-size: 20px; line-height: 1.5; max-width: 60ch; margin: 14px 0 20px; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+.meta { font-family: var(--display); font-size: 16px; color: var(--ochre-soft); margin-top: 12px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 640px) { .copy { padding-bottom: 28px; } }

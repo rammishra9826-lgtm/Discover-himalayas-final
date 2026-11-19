@@ -1,0 +1,4 @@
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.addr { font-size: 16px; line-height: 1.8; }
+.addr b { font-family: var(--display); font-size: 20px; font-weight: 600; display: block; }
+@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }

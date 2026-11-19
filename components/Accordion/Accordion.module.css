@@ -1,0 +1,11 @@
+.list { border-bottom: 1px solid var(--line); }
+.item { border-top: 1px solid var(--line); padding: 4px 0; }
+.q { font-size: inherit; line-height: inherit; text-transform: none; letter-spacing: 0; margin: 0; }
+.q button {
+  all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: flex; justify-content: space-between; gap: 16px;
+  font-family: var(--display); font-weight: 600; font-size: 20px; line-height: 1.2; padding: 16px 0; color: var(--text);
+}
+.q button:focus-visible { outline: 2px solid var(--lake-deep); outline-offset: 2px; }
+.icon { font-weight: 500; color: var(--ochre); }
+.a { max-width: 66ch; padding-bottom: 14px; font-family: var(--body); }
+.a p { margin: 0 0 12px; }

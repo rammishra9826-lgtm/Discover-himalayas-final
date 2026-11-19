@@ -1,0 +1,22 @@
+.frame { position: relative; overflow: hidden; border-radius: 4px; background: linear-gradient(170deg, #9FB6C1, #5C7A88 60%, #3C5461); }
+.warm { background: linear-gradient(170deg, #E0C9A8, #B8905F 60%, #8A6238); }
+.green { background: linear-gradient(170deg, #C9DCCB, #7FA389 60%, #4B6E55); }
+.stone { background: linear-gradient(170deg, #C9C2B5, #8A8378 60%, #4F4A43); }
+.sky { background: var(--sky); }
+.sky .lbl { color: var(--text); background: rgba(255,255,255,.8); }
+.fill { position: absolute; inset: 0; }
+.flat { border-radius: 0; }
+.media { object-fit: cover; width: 100%; height: 100%; display: block; }
+
+.lbl {
+  position: absolute; left: 16px; bottom: 14px; font-family: var(--display); font-weight: 600; font-size: 14px;
+  letter-spacing: .06em; text-transform: uppercase; color: #fff; background: rgba(0,0,0,.35);
+  padding: 4px 9px; border-radius: 2px; max-width: calc(100% - 32px);
+}
+.lblTop { bottom: auto; top: 16px; }
+.ratio { position: absolute; right: 16px; top: 14px; font-family: var(--display); font-size: 14px; color: #fff; opacity: .8; }
+
+.video::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 50%;
+  background: rgba(255,255,255,.9) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l10 6-10 6z' fill='%231E262B'/%3E%3C/svg%3E") center / 32px no-repeat;
+}
