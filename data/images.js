@@ -11,20 +11,26 @@
 
 export const IMAGES = {
   home: {
-    heroVideo: null,                 // 16:9 drone video (.mp4)
-    gallery: [null, null, null, null, null],   // 5 pictures: 1 wide + 4 portrait
-    people: null,                    // Vinod briefing the group (4:5)
-    fleetWide: null,                 // wide photo of the fleet (21:9)
-    custom: null,                    // private group on an unmarked road (4:5)
+    heroVideo: "/videos/home/hero-promo.mp4",   // 16:9 drone video (.mp4)
+    gallery: [
+      "/images/home/pangong-shoreline-bikes.JPG",    // 1 wide
+      "/images/home/prayer-flags-khardung-la.JPG",   // portrait
+      "/images/home/rider-portrait-chang-la.JPG",    // portrait
+      "/images/home/Shyok-road-water-crossing.JPG",  // portrait
+      "/images/home/group-tso-moriri-camp.JPG",      // portrait
+    ],                                               // 5 pictures: 1 wide + 4 portrait
+    people: "/images/home/vinod-briefing-dawn.JPG",  // Vinod briefing the group (4:5)
+    fleetWide: "/images/home/buttom.jpg",            // wide photo of the fleet (21:9)
+    custom: "/images/home/a-private-group-on-Zanskar-Kinnaur.JPG",  // private group on an unmarked road (4:5)
   },
-  journeys: { hero: null },
+  journeys: { hero: "/images/journeys/group-riding-toward-pass-early-morning.png" },
   past: {
     heroVideo: null,
     passport: null,
     // one entry per departure in data/past.js, same order
     groups: [null, null, null, null, null, null],
   },
-  custom: { hero: null, cases: [null, null, null] },
+  custom: { hero: "/images/custom-tour/private-group-remote-road.png", cases: [null, null, null] },
   fleet: {
     hero: null,
     archive: null,
@@ -46,53 +52,53 @@ export const IMAGES = {
       stages: [null, null, null, null, null, null, null], // one picture per stage (3:2)
     },
     mustang: {
-      card: null,            // square-ish picture on the journey card (4:3)
-      hero: null,            // big picture at the top of the journey page (16:9)
-      map: null,             // route map image
-      thumbs: [null, null, null],   // 3 small pictures on /journeys (video, road, stay)
-      stages: [null, null, null, null, null], // one picture per stage (3:2)
+      card: null,
+      hero: null,
+      map: null,
+      thumbs: [null, null, null],
+      stages: [null, null, null, null, null],
     },
     heaven: {
-      card: null,            // square-ish picture on the journey card (4:3)
-      hero: null,            // big picture at the top of the journey page (16:9)
-      map: null,             // route map image
-      thumbs: [null, null, null],   // 3 small pictures on /journeys (video, road, stay)
-      stages: [null, null, null, null, null, null], // one picture per stage (3:2)
+      card: null,
+      hero: null,
+      map: null,
+      thumbs: [null, null, null],
+      stages: [null, null, null, null, null, null],
     },
     tibet: {
-      card: null,            // square-ish picture on the journey card (4:3)
-      hero: null,            // big picture at the top of the journey page (16:9)
-      map: null,             // route map image
-      thumbs: [null, null, null],   // 3 small pictures on /journeys (video, road, stay)
-      stages: [null, null, null, null, null], // one picture per stage (3:2)
+      card: null,
+      hero: null,
+      map: null,
+      thumbs: [null, null, null],
+      stages: [null, null, null, null, null],
     },
     bhutan: {
-      card: null,            // square-ish picture on the journey card (4:3)
-      hero: null,            // big picture at the top of the journey page (16:9)
-      map: null,             // route map image
-      thumbs: [null, null, null],   // 3 small pictures on /journeys (video, road, stay)
-      stages: [null, null, null, null, null], // one picture per stage (3:2)
+      card: null,
+      hero: null,
+      map: null,
+      thumbs: [null, null, null],
+      stages: [null, null, null, null, null],
     },
     rajasthan: {
-      card: null,            // square-ish picture on the journey card (4:3)
-      hero: null,            // big picture at the top of the journey page (16:9)
-      map: null,             // route map image
-      thumbs: [null, null, null],   // 3 small pictures on /journeys (video, road, stay)
-      stages: [null, null, null, null, null, null], // one picture per stage (3:2)
+      card: null,
+      hero: null,
+      map: null,
+      thumbs: [null, null, null],
+      stages: [null, null, null, null, null, null],
     },
     goa: {
-      card: null,            // square-ish picture on the journey card (4:3)
-      hero: null,            // big picture at the top of the journey page (16:9)
-      map: null,             // route map image
-      thumbs: [null, null, null],   // 3 small pictures on /journeys (video, road, stay)
-      stages: [null, null, null, null, null, null], // one picture per stage (3:2)
+      card: null,
+      hero: null,
+      map: null,
+      thumbs: [null, null, null],
+      stages: [null, null, null, null, null, null],
     },
     k2k: {
-      card: null,            // square-ish picture on the journey card (4:3)
-      hero: null,            // big picture at the top of the journey page (16:9)
-      map: null,             // route map image
-      thumbs: [null, null, null],   // 3 small pictures on /journeys (video, road, stay)
-      stages: [null, null, null, null, null, null], // one picture per stage (3:2)
+      card: null,
+      hero: null,
+      map: null,
+      thumbs: [null, null, null],
+      stages: [null, null, null, null, null, null],
     },
   },
 };

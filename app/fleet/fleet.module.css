@@ -2,4 +2,18 @@
 .bikes h3 { margin: 14px 0 8px; }
 .bikes p { font-size: 16px; color: var(--text-2); }
 .tight { padding-top: 0; }
+
+/* Bike photos: sab 3:2, box poora bhare */
+.bikes img {
+  object-fit: cover !important;
+  object-position: center;
+}
+
+/* RE 450 aur RE 411 thoda zoom, taaki RE 500 jitni badi dikhe */
+.bikes > div:nth-child(1) img,
+.bikes > div:nth-child(2) img {
+  transform: scale(1.25);
+  transform-origin: 50% 70%;
+}
+
 @media (max-width: 860px) { .bikes { grid-template-columns: 1fr; } }

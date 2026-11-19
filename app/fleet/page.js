@@ -38,7 +38,7 @@ export default function FleetPage() {
           <div className={styles.bikes}>
             {BIKES.map((b, i) => (
               <div key={b.name}>
-                <MediaFrame aspect="3 / 2" tone={b.tone} src={IMAGES.fleet.bikes[i]} label={b.label} ratio="3:2" alt={b.name} sizes="(max-width: 860px) 100vw, 33vw" />
+                <MediaFrame aspect="3 / 2" tone={b.tone} src={b.src} label={b.label} ratio="3:2" alt={b.name} sizes="(max-width: 860px) 100vw, 33vw" />
                 <h3>{b.name}</h3>
                 <p>{b.text}</p>
               </div>
