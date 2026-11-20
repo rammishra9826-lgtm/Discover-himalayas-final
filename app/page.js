@@ -5,7 +5,9 @@ import Gallery from "@/components/MediaFrame/Gallery";
 import Band from "@/components/Band/Band";
 import Quote from "@/components/Quote/Quote";
 import FadeIn from "@/components/FadeIn/FadeIn";
+import Testimonials from "@/components/Testimonials/Testimonials";
 import { IMAGES } from "@/data/images";
+import { TESTIMONIALS } from "@/data/testimonials";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -93,20 +95,8 @@ export default function Home() {
       <section className={styles.tight}>
         <div className="wrap">
           <h2>From riders who came back</h2>
-          <div className={styles.testis}>
-            <blockquote className={styles.testi}>
-              "Riding the tour from Ladakh, with my father and my German friends was an experience of a lifetime! Unique monasteries, spectacular views, friendly people… and what a ride."
-              <cite>Neil, Germany</cite>
-            </blockquote>
-            <blockquote className={styles.testi}>
-              "Everything was very well organised and prepared. For sure we all will take this experience along as a treasure for the years to come."
-              <cite>Ladakh group, 2025</cite>
-            </blockquote>
-            {/* PLACEHOLDER from the client prototype: replace with a real Rajasthan / South India review */}
-            <blockquote className={styles.testi}>
-              [Add a Rajasthan or South India review here — ideally one that mentions the roads, the hotels or the food.]
-              <cite>Rider name, country</cite>
-            </blockquote>
+          <div>
+            <Testimonials items={TESTIMONIALS} />
           </div>
         </div>
       </section>
