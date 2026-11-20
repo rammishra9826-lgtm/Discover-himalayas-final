@@ -20,6 +20,12 @@ export default function Home() {
     { src: g[4], label: "Bikes at the Tso Moriri camp", ratio: "4:5", sizes: "25vw" },
   ];
 
+  // custom-tours slideshow: one entry per photo in IMAGES.home.customSlides
+  const customSlides = IMAGES.home.customSlides.map((src, i) => ({
+    src,
+    label: `Custom tour group ride, photo ${i + 1}`,
+  }));
+
   return (
     <>
       <PageHero
@@ -104,7 +110,7 @@ export default function Home() {
       <section className={styles.tight}>
         <div className="wrap">
           <FadeIn>
-            <Band flip image={{ src: IMAGES.home.custom, label: "Drone still: a private group on an unmarked road — Zanskar or Kinnaur", ratio: "4:5", tone: "green" }}>
+            <Band flip image={{ slides: customSlides }}>
               <div className="kicker">Custom tours</div>
               <h2 style={{ maxWidth: "16ch" }}>Your group. Your dates. A route drawn for you.</h2>
               <p>

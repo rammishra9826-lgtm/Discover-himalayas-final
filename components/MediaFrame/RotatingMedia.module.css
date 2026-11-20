@@ -1,0 +1,57 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #3C5461;
+}
+.flat { border-radius: 0; }
+
+/* waiting slides sit off-screen on the right (no transition, so they reset instantly) */
+.slide {
+  position: absolute;
+  inset: 0;
+  transform: translateX(100%);
+  will-change: transform;
+}
+
+/* the photo on screen */
+.current {
+  transform: translateX(0);
+  transition: transform 1s cubic-bezier(.65, 0, .35, 1);
+  z-index: 2;
+}
+
+/* the photo that is leaving to the left */
+.leaving {
+  transform: translateX(-100%);
+  transition: transform 1s cubic-bezier(.65, 0, .35, 1);
+  z-index: 1;
+}
+
+.img { object-fit: cover; }
+
+.dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 14px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.dot {
+  width: 8px; height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .5);
+  transition: width .3s, background .3s;
+}
+.dot:hover { background: rgba(255, 255, 255, .85); }
+.dotOn { width: 24px; background: #fff; }
+.dot:focus-visible { outline: 2px solid var(--ochre, #D08A3C); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .current, .leaving { transition-duration: .01ms; }
+}
