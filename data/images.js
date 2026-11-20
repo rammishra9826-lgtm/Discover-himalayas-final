@@ -48,11 +48,15 @@ export const IMAGES = {
     portraits: [
       "/images/crew/vinod.jpeg",        // Vinod Kaistha
       "/images/crew/nadia.jpeg",        // Nadia Kaistha
-      "/images/crew/sahil.jpeg",        // Sahil Kaistha
-      null,                             // Surya Kaistha (photo chahiye)
-      "/images/crew/jaydeep.jpeg",      // Jaydeep Mishra
       "/images/crew/Uwe-balser.jpeg",   // Uwe Balser
-      "/images/crew/tony.jpeg",         // Tony
+      "/images/crew/sahil.jpeg",        // Sahil Kaistha
+       "/images/crew/jaydeep.jpeg",      // Jaydeep Mishra
+       "/images/crew/tony.jpeg",         // Tony
+      "/images/crew/Surya-Kaistha.jpeg", // Surya Kaistha ()
+      
+     
+      
+      
     ],
   },
   // journal: key = post "id" in data/posts.js (hero) ; the card picture uses card

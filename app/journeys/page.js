@@ -17,7 +17,7 @@ export default function JourneysPage() {
         src={IMAGES.journeys.hero}
         label="Drone still: group riding toward a pass, early morning"
         kicker="Journeys · 2027"
-        title="Eight journeys"
+        title="journeys"
       />
       <section>
         <div className="wrap">

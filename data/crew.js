@@ -8,7 +8,12 @@ export const CREW = [
   {
     name: "Nadia Kaistha",
     role: "Co-Founder, Guest Relations and Administrative Manager",
-    line: "[One line on what Nadia does for riders before and during a journey.]",
+    line: "“Bringing the East close to the West with an understanding of customer’s needs” ",
+  },
+  {
+    name: "Uwe Balser",
+    role: " Sales and Marketing Representative for Europe",
+    line: "[One line, in his own words.]",
   },
   {
     name: "Sahil Kaistha",
@@ -16,23 +21,19 @@ export const CREW = [
     line: "[One line, in his own words.]",
   },
   {
-    name: "Surya Kaistha",
-    role: "Road Captain",
-    line: "[One line, in his own words.]",
-  },
-  {
     name: "Jaydeep Mishra",
     role: "Road Captain and Filmmaker",
     line: "[One line, in his own words.]",
   },
-  {
-    name: "Uwe Balser",
-    role: "Road Captain",
-    line: "[One line, in his own words.]",
-  },
+ 
   {
     name: "Tony",
     role: "Road Captain",
+    line: "[One line, in his own words.]",
+  },
+   {
+    name: "Surya Kaistha",
+    role: "Junior Road Captain and Journey Manager",
     line: "[One line, in his own words.]",
   },
 ];
