@@ -14,11 +14,12 @@ export default function FleetPage() {
   return (
     <>
       <PageHero
-        src={IMAGES.fleet.hero}
-        label="Photo: the fleet lined up outside the guesthouse in Naggar"
-        kicker="Fleet"
-        title="The fleet"
-      />
+  src={IMAGES.fleet.hero}
+  label="Photo: the fleet lined up outside the guesthouse in Naggar"
+  kicker="Fleet"
+  title="The fleet"
+  aspect="16 / 9"
+/>
       <section>
         <div className="wrap">
           <div style={{ marginTop: 8 }}>

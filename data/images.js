@@ -20,8 +20,8 @@ export const IMAGES = {
       "/images/home/group-tso-moriri-camp.png",      // portrait
     ],                                               // 5 pictures: 1 wide + 4 portrait
     people: "/images/home/vinod-briefing-dawn.png",  // Vinod briefing the group (4:5)
-    fleetWide: "/images/home/buttom.png",            // wide photo of the fleet (21:9)
-    custom: "/images/home/a-private-group-on-Zanskar-Kinnaur.png",  // private group on an unmarked road (4:5)
+    fleetWide: "/images/home/the-fleet.png",            // wide photo of the fleet (21:9)
+    custom: "/images/home/home-buttom.png",  // private group on an unmarked road (4:5)
   },
   journeys: { hero: "/images/journeys/group-riding-toward-pass-early-morning.png" },
   past: {
@@ -32,8 +32,8 @@ export const IMAGES = {
   },
   custom: { hero: "/images/custom-tour/private-group-remote-road.png", cases: [null, null, null] },
   fleet: {
-    hero: "/images/fleet/fleet.jpeg",        // top of the /fleet page
-    archive: "/images/fleet/REMAIN.avif",
+    hero: "/images/fleet/fleet.png",        // top of the /fleet page
+    archive: "/images/fleet/REMAIN.png",
     bikes: [
       "/images/fleet/RE450.png",             // Himalayan 450
       "/images/fleet/RE411.png",             // Himalayan 411
@@ -43,20 +43,18 @@ export const IMAGES = {
   },
   about: { hero: null },
   crew: {
-    hero: null,
+    hero: "/images/crew/crew_with_vehicle.png",  // top of the /crew page
     // same order as CREW in data/crew.js
     portraits: [
-      "/images/crew/vinod.jpeg",        // Vinod Kaistha
-      "/images/crew/nadia.jpeg",        // Nadia Kaistha
-      "/images/crew/Uwe-balser.jpeg",   // Uwe Balser
-      "/images/crew/sahil.jpeg",        // Sahil Kaistha
-       "/images/crew/jaydeep.jpeg",      // Jaydeep Mishra
-       "/images/crew/tony.jpeg",         // Tony
-      "/images/crew/Surya-Kaistha.jpeg", // Surya Kaistha ()
-      
-     
-      
-      
+      "/images/crew/vinod.jpeg",          // Vinod Kaistha
+      "/images/crew/nadia.jpeg",          // Nadia Kaistha
+      "/images/crew/Uwe-balser.jpeg",     // Uwe Balser
+      "/images/crew/sahil.jpeg",          // Sahil Kaistha
+      "/images/crew/jaydeep.jpeg",        // Jaydeep Mishra
+      "/images/crew/tony.jpeg",           // Tony
+      "/images/crew/Surya-Kaistha.jpeg",  // Surya Kaistha
+      "/images/crew/aloo.jpeg",           // Aloo
+      "/images/crew/ramesh.jpeg",         // Ramesh
     ],
   },
   // journal: key = post "id" in data/posts.js (hero) ; the card picture uses card

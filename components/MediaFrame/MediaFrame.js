@@ -12,13 +12,14 @@ export default function MediaFrame({
   alt,
   label,
   ratio,
-  video = false,     // show a play icon on the placeholder
-  aspect,            // CSS aspect-ratio, e.g. "3 / 2"
-  tone = "default",  // placeholder colour: default | warm | green | stone
-  labelTop = false,  // put the caption at the top-left (used on heroes)
-  fill = false,      // stretch to cover the parent (heroes)
-  flat = false,      // no rounded corners
+  video = false,       // show a play icon on the placeholder
+  aspect,              // CSS aspect-ratio, e.g. "3 / 2"
+  tone = "default",    // placeholder colour: default | warm | green | stone
+  labelTop = false,    // put the caption at the top-left (used on heroes)
+  fill = false,        // stretch to cover the parent (heroes)
+  flat = false,        // no rounded corners
   priority = false,
+  objectPosition,      // NEW: e.g. "center 60%" -> which part of the photo stays visible
   sizes = "(max-width: 860px) 100vw, 50vw",
   className = "",
   style,
@@ -36,6 +37,8 @@ export default function MediaFrame({
     .filter(Boolean)
     .join(" ");
 
+  const mediaStyle = objectPosition ? { objectPosition } : undefined;
+
   return (
     <div
       className={cls}
@@ -44,9 +47,25 @@ export default function MediaFrame({
     >
       {src ? (
         isVideo ? (
-          <video className={styles.media} src={src} autoPlay muted loop playsInline />
+          <video
+            className={styles.media}
+            src={src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={mediaStyle}
+          />
         ) : (
-          <Image className={styles.media} src={src} alt={alt ?? label ?? ""} fill sizes={sizes} priority={priority} />
+          <Image
+            className={styles.media}
+            src={src}
+            alt={alt ?? label ?? ""}
+            fill
+            sizes={sizes}
+            priority={priority}
+            style={mediaStyle}
+          />
         )
       ) : (
         <>

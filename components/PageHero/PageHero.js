@@ -4,11 +4,6 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import MediaFrame from "@/components/MediaFrame/MediaFrame";
 import styles from "./PageHero.module.css";
 
-/**
- * Full-width photo/video header used on every inner page.
- * kicker = small line above the title, lead = paragraph under it, children = buttons.
- * The media stays fixed in size and position; only the text fades and lifts slightly on scroll.
- */
 export default function PageHero({
   src,
   video = false,
@@ -21,6 +16,8 @@ export default function PageHero({
   lead,
   meta,
   height = "min(60vh, 520px)",
+  aspect,            // NEW: e.g. "3 / 2" -> hero takes the photo's real shape (no crop)
+  position,          // NEW: e.g. "center 60%" -> which part stays visible if some crop happens
   children,
 }) {
   const reduce = useReducedMotion();
@@ -34,9 +31,26 @@ export default function PageHero({
     ? {}
     : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, ease: [0.2, 0.7, 0.2, 1] } };
 
+  const heroStyle = aspect ? { "--a": aspect } : { "--h": height };
+
   return (
-    <header ref={ref} className={styles.hero} style={{ "--h": height }}>
-      <MediaFrame fill flat priority src={src} label={label} ratio={ratio} video={video} labelTop sizes="100vw" />
+    <header
+      ref={ref}
+      className={`${styles.hero} ${aspect ? styles.byAspect : ""}`}
+      style={heroStyle}
+    >
+      <MediaFrame
+        fill
+        flat
+        priority
+        src={src}
+        label={label}
+        ratio={ratio}
+        video={video}
+        labelTop
+        sizes="100vw"
+        objectPosition={position}
+      />
       <div className={styles.shade} />
       <motion.div className={styles.copy} style={reduce ? undefined : { y: copyY, opacity: copyOpacity }}>
         <motion.div className="wrap" {...anim}>

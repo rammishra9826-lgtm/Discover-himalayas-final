@@ -34,7 +34,7 @@ export default function CrewPage() {
                   label={`Portrait: ${p.name.split(" ")[0]}`}
                   ratio="4:5"
                   alt={p.name}
-                  sizes="(max-width: 560px) 100vw, 25vw"
+                  sizes="(max-width: 560px) 100vw, 33vw"
                   className={styles.portrait}
                 />
                 <h3>{p.name}</h3>
@@ -42,8 +42,6 @@ export default function CrewPage() {
               </div>
             ))}
           </div>
-          {/* PLACEHOLDER from the client prototype */}
-          <p className="mute" style={{ marginTop: 24 }}>[The rest of the crew, mechanics and support drivers, to be added.]</p>
         </div>
       </section>
     </>

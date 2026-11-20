@@ -8,7 +8,7 @@ import styles from "./past.module.css";
 
 export const metadata = {
   title: "Past journeys",
-  description: "Every departure since 2011: groups, roads and the Rider Passport.",
+  description: "departure since 2011: groups, roads and the Rider Passport.",
 };
 
 export default function PastJourneysPage() {
@@ -19,7 +19,7 @@ export default function PastJourneysPage() {
         video
         label="Drone video: best of our departures, 60-second cut"
         kicker="Past journeys"
-        title="Every departure since 2011"
+        title="departure since 2011"
       />
       <section>
         <div className="wrap">
