@@ -15,7 +15,10 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-html { scroll-padding-top: calc(80px + env(safe-area-inset-top, 0px)); }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(80px + env(safe-area-inset-top, 0px));
+}
 *, *::before, *::after { box-sizing: inherit; }
 
 body {

@@ -6,6 +6,7 @@ import "@fontsource/barlow-condensed/700.css";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import ScrollProgress from "@/components/ScrollProgress/ScrollProgress";
 import { SITE } from "@/data/site";
 
 export const metadata = {
@@ -24,8 +25,9 @@ export const viewport = { width: "device-width", initialScale: 1, viewportFit: "
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
+        <ScrollProgress />
         <Navbar />
         <main>{children}</main>
         <Footer />

@@ -32,9 +32,13 @@ export const IMAGES = {
   },
   custom: { hero: "/images/custom-tour/private-group-remote-road.png", cases: [null, null, null] },
   fleet: {
-    hero: null,
-    archive: null,
-    bikes: [null, null, null],       // Himalayan 450, Himalayan 411, Bullet 500
+    hero: "/images/fleet/fleet.jpeg",        // top of the /fleet page
+    archive: "/images/fleet/REMAIN.avif",
+    bikes: [
+      "/images/fleet/RE450.png",             // Himalayan 450
+      "/images/fleet/RE411.png",             // Himalayan 411
+      "/images/fleet/RE500.png",             // Bullet 500
+    ],
     support: null,
   },
   about: { hero: null },

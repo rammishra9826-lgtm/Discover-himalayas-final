@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero/PageHero";
 import MediaFrame from "@/components/MediaFrame/MediaFrame";
+import Gallery from "@/components/MediaFrame/Gallery";
 import Band from "@/components/Band/Band";
 import Quote from "@/components/Quote/Quote";
 import FadeIn from "@/components/FadeIn/FadeIn";
@@ -9,6 +10,14 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const g = IMAGES.home.gallery;
+  const galleryItems = [
+    { src: g[0], label: "Pangong Tso shoreline, rider and bike", ratio: "3:2", sizes: "(max-width: 860px) 100vw, 50vw" },
+    { src: g[1], label: "Group at the Khardung La top", ratio: "4:5", sizes: "25vw" },
+    { src: g[2], label: "Rider portrait, Chang La", ratio: "4:5", sizes: "25vw" },
+    { src: g[3], label: "Shyok road water crossing", ratio: "4:5", sizes: "25vw" },
+    { src: g[4], label: "Bikes at the Tso Moriri camp", ratio: "4:5", sizes: "25vw" },
+  ];
+
   return (
     <>
       <PageHero
@@ -34,13 +43,7 @@ export default function Home() {
 
       <section className={styles.tight}>
         <div className="wrap">
-          <div className={styles.gallery}>
-            <MediaFrame src={g[0]} label="Drone still: Pangong Tso shoreline, bikes in frame" ratio="3:2" sizes="(max-width: 860px) 100vw, 50vw" />
-            <MediaFrame src={g[1]} label="Rider portrait, Chang La" ratio="4:5" sizes="25vw" />
-            <MediaFrame src={g[2]} label="Prayer flags, Khardung La summit" ratio="4:5" sizes="25vw" />
-            <MediaFrame src={g[3]} label="Group at Tso Moriri camp" ratio="4:5" sizes="25vw" />
-            <MediaFrame src={g[4]} label="Shyok road water crossing" ratio="4:5" sizes="25vw" />
-          </div>
+          <Gallery items={galleryItems} />
         </div>
       </section>
 
