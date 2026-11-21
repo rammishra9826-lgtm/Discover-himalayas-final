@@ -21,6 +21,12 @@ export const IMAGES = {
     ],                                               // 5 pictures: 1 wide + 4 portrait
     people: "/images/home/vinod-briefing-dawn.png",  // Vinod briefing the group (4:5)
     fleetWide: "/images/home/the-fleet.png",            // wide photo of the fleet (21:9)
+    fleetSlides: [                                   // fleet slider on the home page (left/right buttons)
+      "/images/home/the-fleet.png",
+      "/images/home/the-fleet2.png",
+      "/images/home/the-fleet3.png",
+      "/images/home/the-fleet4.png",
+    ],
     custom: "/images/home/home-buttom.png",  // private group on an unmarked road (4:5)
     customSlides: [                          // custom-tours slideshow, changes every 8s
       "/images/home/home-buttom.png",
@@ -46,7 +52,7 @@ export const IMAGES = {
       "/images/fleet/RE411.png",             // Himalayan 411
       "/images/fleet/RE500.png",             // Bullet 500
     ],
-    support: "/images/fleet/support-vehicle.png",  // support vehicles and mechanic
+    support:"/images/fleet/support-vehicle.png",  // support vehicle
   },
   about: { hero: null },
   crew: {

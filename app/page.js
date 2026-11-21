@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero/PageHero";
-import MediaFrame from "@/components/MediaFrame/MediaFrame";
+import FleetSlider from "@/components/FleetSlider/FleetSlider";
 import Gallery from "@/components/MediaFrame/Gallery";
 import Band from "@/components/Band/Band";
 import Quote from "@/components/Quote/Quote";
@@ -24,6 +24,12 @@ export default function Home() {
   const customSlides = IMAGES.home.customSlides.map((src, i) => ({
     src,
     label: `Custom tour group ride, photo ${i + 1}`,
+  }));
+
+  // fleet slider: one entry per photo in IMAGES.home.fleetSlides
+  const fleetSlides = IMAGES.home.fleetSlides.map((src, i) => ({
+    src,
+    label: `The fleet on the road, photo ${i + 1} of ${IMAGES.home.fleetSlides.length}`,
   }));
 
   return (
@@ -78,13 +84,7 @@ export default function Home() {
 
       <section className={styles.tight}>
         <div className="wrap">
-          <MediaFrame
-            src={IMAGES.home.fleetWide}
-            aspect="21 / 9"
-            label="Wide photo: the fleet lined up on a mountain road, support vehicles behind"
-            ratio="21:9"
-            sizes="100vw"
-          />
+          <FleetSlider slides={fleetSlides} aspect="21 / 9" />
           <div className={`sectionHead ${styles.fleetHead}`}>
             <div>
               <h2>The fleet</h2>
