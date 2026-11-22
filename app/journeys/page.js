@@ -23,7 +23,7 @@ export default function JourneysPage() {
         <div className="wrap">
           <p className={`lead mute ${styles.lead}`}>
             Each departure needs seven riders to run and takes fourteen at most. Prices are per person in euros; pillions ride at a
-            lower rate. Single room +EUR 595. Book with a deposit of EUR 500; the balance is due three months before the start.
+            lower rate. with every journey price as the supplement is everywhere different. Book with a deposit of EUR 500; the balance is due three months before the start.
           </p>
           <div className={styles.upcoming}>
             {ORDER.map((id, i) => (

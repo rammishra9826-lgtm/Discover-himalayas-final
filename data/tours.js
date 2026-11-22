@@ -185,7 +185,7 @@ export const TOURS = {
     "itin": []
   },
   "bhutan": {
-    "name": "Land of the Thunder Dragon",
+    "name": "Land of the Thunder ",
     "region": "Bhutan",
     "country": "Bhutan",
     "days": 11,
@@ -199,7 +199,7 @@ export const TOURS = {
     "bike": "Royal Enfield Bullet 500",
     "support": "Included",
     "terrain": 3,
-    "riderlvl": 2,
+    "riderlvl": 3,
     "rider": null,
     "pillion": null,
     "blurb": "An 11-day journey through Bhutan's winding mountain roads, ancient monasteries, remote valleys and some of the highest motorable passes in the country.",
@@ -458,7 +458,7 @@ export const TOURS = {
     "start": "Delhi",
     "end": "Delhi",
     "km": null,
-    "alt": "Lowland",
+    "alt": "travelling from the OUTSKIRTS of Delhi",
     "pass": "",
     "bike": "Royal Enfield Himalayan 411",
     "support": "Included",

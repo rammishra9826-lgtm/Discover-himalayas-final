@@ -37,8 +37,9 @@ export const IMAGES = {
     ],
   },
   journeys: { hero: "/images/journeys/group-riding-toward-pass-early-morning.png" },
+
   past: {
-    heroVideo: null,
+    heroVideo: "/videos/Past-journeys/pastjourney-hero.mp4",  // 16:9 drone video (.mp4)
     passport: null,
     // one entry per departure in data/past.js, same order
     groups: [null, null, null, null, null, null],
