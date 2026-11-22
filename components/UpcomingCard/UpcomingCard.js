@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MediaFrame from "@/components/MediaFrame/MediaFrame";
+import VideoThumb from "@/components/VideoThumb/VideoThumb";
 import StatusTag from "@/components/StatusTag/StatusTag";
 import { TOURS, LOWLAND_REGIONS } from "@/data/tours";
 import { IMAGES } from "@/data/images";
@@ -20,7 +21,7 @@ export default function UpcomingCard({ id, index = 0 }) {
         <MediaFrame aspect="4 / 3" tone={TONES[index % 3]} src={img.card} label={`${t.region}: hero still`} ratio="4:3" alt={t.name} />
       </Link>
       <div className={styles.thumbs}>
-        <MediaFrame aspect="4 / 3" video label="Video" src={img.thumbs?.[0]} sizes="150px" />
+        <VideoThumb src={img.thumbs?.[0]} video={img.video} label="Video" />
         <MediaFrame aspect="4 / 3" label="Road" src={img.thumbs?.[1]} sizes="150px" />
         <MediaFrame aspect="4 / 3" label="Stay" src={img.thumbs?.[2]} sizes="150px" />
       </div>

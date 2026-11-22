@@ -9,6 +9,31 @@
 // Tip: export photos as .jpg/.webp, about 2000px wide; Next.js resizes them.
 // ---------------------------------------------------------------------------
 
+// TEMPORARY: the Ladakh photo + video are used on every journey for now.
+// Later, replace a journey's  tour(n)  with its own values (see the commented example below).
+const LADAKH_PHOTO = "/images/journeys/ladakh-hero.JPG"; // capital .JPG, exactly like the file name
+const LADAKH_VIDEO = "https://youtu.be/4GNGrHnER7g";      // YouTube link, opens in a popup
+
+const tour = (stageCount) => ({
+  card: LADAKH_PHOTO,                                   // big picture on the journey card (4:3)
+  hero: null,                                           // big picture at the top of the journey page (16:9)
+  map: null,                                            // route map image
+  video: LADAKH_VIDEO,                                  // YouTube link for the VIDEO thumbnail
+  thumbs: [LADAKH_PHOTO, LADAKH_PHOTO, LADAKH_PHOTO],   // video, road, stay
+  stages: Array(stageCount).fill(null),                 // one picture per stage (3:2)
+});
+
+/* Example of a journey with its own files later:
+   mustang: {
+     card: "/images/journeys/mustang/card.jpg",
+     hero: null,
+     map: null,
+     video: "https://youtu.be/XXXXXXXXXXX",
+     thumbs: ["/images/journeys/mustang/video.jpg", "/images/journeys/mustang/road.jpg", "/images/journeys/mustang/stay.jpg"],
+     stages: [null, null, null, null, null],
+   },
+*/
+
 export const IMAGES = {
   home: {
     heroVideo: "/videos/home/hero-promo.mp4",   // 16:9 drone video (.mp4)
@@ -76,61 +101,13 @@ export const IMAGES = {
     "khardung-la": { hero: null, card: null },
   },
   tours: {
-    ladakh: {
-      card: null,            // square-ish picture on the journey card (4:3)
-      hero: null,            // big picture at the top of the journey page (16:9)
-      map: null,             // route map image
-      thumbs: [null, null, null],   // 3 small pictures on /journeys (video, road, stay)
-      stages: [null, null, null, null, null, null, null], // one picture per stage (3:2)
-    },
-    mustang: {
-      card: null,
-      hero: null,
-      map: null,
-      thumbs: [null, null, null],
-      stages: [null, null, null, null, null],
-    },
-    heaven: {
-      card: null,
-      hero: null,
-      map: null,
-      thumbs: [null, null, null],
-      stages: [null, null, null, null, null, null],
-    },
-    tibet: {
-      card: null,
-      hero: null,
-      map: null,
-      thumbs: [null, null, null],
-      stages: [null, null, null, null, null],
-    },
-    bhutan: {
-      card: null,
-      hero: null,
-      map: null,
-      thumbs: [null, null, null],
-      stages: [null, null, null, null, null],
-    },
-    rajasthan: {
-      card: null,
-      hero: null,
-      map: null,
-      thumbs: [null, null, null],
-      stages: [null, null, null, null, null, null],
-    },
-    goa: {
-      card: null,
-      hero: null,
-      map: null,
-      thumbs: [null, null, null],
-      stages: [null, null, null, null, null, null],
-    },
-    k2k: {
-      card: null,
-      hero: null,
-      map: null,
-      thumbs: [null, null, null],
-      stages: [null, null, null, null, null, null],
-    },
+    ladakh: tour(7),
+    mustang: tour(5),
+    heaven: tour(6),
+    tibet: tour(5),
+    bhutan: tour(5),
+    rajasthan: tour(6),
+    goa: tour(6),
+    k2k: tour(6),
   },
 };
