@@ -1,7 +1,9 @@
 /* Global styles: design tokens, reset, base typography and the few classes
    shared by every page (.wrap, .btn, .lead, .mute, .kicker, .more).
    Everything else lives in a *.module.css next to its component. */
-
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 :root {
   --bone: #FBFAF7; --paper: #FFFFFF; --ink: #26323A; --slate: #8FA3AD; --mute: #66747C;
   --line: #DDE2E0; --lake: #1F8A99; --lake-deep: #167A88; --ochre: #C4792E; --ochre-soft: #F3E6D4;

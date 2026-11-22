@@ -1,11 +1,110 @@
-.form { display: grid; gap: 14px; margin-top: 28px; }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.form label { display: grid; gap: 5px; font-family: var(--body); font-weight: 500; font-size: 15px; }
-.form input, .form select, .form textarea {
-  font: inherit; font-family: var(--body); font-size: 16px; padding: 11px 12px; border: 1px solid var(--line);
-  border-radius: 3px; background: var(--surface); color: var(--text); width: 100%;
+.form {
+  --b: var(--blue, #1f5fbf);
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
 }
-.form textarea { min-height: 120px; resize: vertical; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.form label, .field {
+  display: grid;
+  gap: 5px;
+  position: relative;
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+.lbl { display: block; }
+
+.form input:not([type="hidden"]), .form textarea, .selectBtn {
+  font: inherit;
+  font-family: var(--body);
+  font-weight: 400;
+  letter-spacing: normal;
+  font-size: 15px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  width: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.form input::placeholder, .form textarea::placeholder { color: var(--mute); opacity: 0.8; }
+
+.form input:not([type="hidden"]):hover, .form textarea:hover, .selectBtn:hover { border-color: var(--b); }
+.form input:not([type="hidden"]):focus, .form textarea:focus, .selectBtn:focus-visible, .selectOpen {
+  outline: none;
+  border-color: var(--b);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--b) 18%, transparent);
+}
+.form textarea { min-height: 96px; resize: vertical; }
+
+/* Custom journey dropdown */
+.selectBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+}
+.chev {
+  width: 8px; height: 8px;
+  border-right: 2px solid var(--b);
+  border-bottom: 2px solid var(--b);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s ease;
+}
+.selectOpen .chev { transform: rotate(-135deg) translateY(-2px); }
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0; right: 0;
+  z-index: 30;
+  margin: 0; padding: 6px;
+  list-style: none;
+  max-height: 260px;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(15, 30, 60, 0.18);
+}
+.opt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 10px;
+  border-radius: 6px;
+  font-family: var(--display);   /* site ka bold condensed heading font */
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--b);
+  cursor: pointer;
+}
+.opt:hover { background: color-mix(in srgb, var(--b) 10%, transparent); }
+.optSel {
+  font-weight: 800;
+  background: color-mix(in srgb, var(--b) 12%, transparent);
+}
+
+/* Submit button blue */
+.form .submit {
+  background: var(--b);
+  border-color: var(--b);
+  color: #fff;
+  border-radius: 8px;
+  padding: 11px 26px;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+.form .submit:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); }
+.form .submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
 .trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-.status { font-size: 14px; color: var(--mute); margin: 0; }
+.status { font-size: 13px; color: var(--mute); margin: 0; }
+.ok { color: var(--b); font-weight: 600; }
+
 @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }

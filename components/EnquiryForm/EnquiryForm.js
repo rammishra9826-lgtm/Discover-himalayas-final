@@ -1,7 +1,68 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { SITE } from "@/data/site";
 import styles from "./EnquiryForm.module.css";
+
+/** Custom dropdown: options blue, selected option bold + tick. Hidden input se form data same jata hai. */
+function JourneySelect({ tours, value, onChange }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  const all = [{ id: "", name: "Not sure yet" }, ...tours];
+  const current = all.find((o) => o.id === value) ?? all[0];
+
+  useEffect(() => {
+    function onDoc(e) {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+    }
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, []);
+
+  function onKey(e) {
+    if (e.key === "Escape") setOpen(false);
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      const i = all.findIndex((o) => o.id === value);
+      const n = e.key === "ArrowDown" ? Math.min(i + 1, all.length - 1) : Math.max(i - 1, 0);
+      onChange(all[n].id);
+      setOpen(true);
+    }
+  }
+
+  return (
+    <div className={styles.field} ref={ref}>
+      <span className={styles.lbl}>Journey</span>
+      <input type="hidden" name="tour" value={value} />
+      <button
+        type="button"
+        className={`${styles.selectBtn} ${open ? styles.selectOpen : ""}`}
+        onClick={() => setOpen((o) => !o)}
+        onKeyDown={onKey}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+      >
+        <span>{current.name}</span>
+        <i className={styles.chev} aria-hidden="true" />
+      </button>
+      {open && (
+        <ul className={styles.menu} role="listbox">
+          {all.map((o) => (
+            <li
+              key={o.id || "none"}
+              role="option"
+              aria-selected={o.id === value}
+              className={`${styles.opt} ${o.id === value ? styles.optSel : ""}`}
+              onClick={() => { onChange(o.id); setOpen(false); }}
+            >
+              {o.name}
+              {o.id === value && <span aria-hidden="true">✓</span>}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 /**
  * Enquiry form. Sends to /api/enquiry (see app/api/enquiry/route.js).
@@ -9,6 +70,7 @@ import styles from "./EnquiryForm.module.css";
  */
 export default function EnquiryForm({ tours, defaultTour = "" }) {
   const [state, setState] = useState("idle"); // idle | sending | sent | error
+  const [tour, setTour] = useState(defaultTour);
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -26,6 +88,7 @@ export default function EnquiryForm({ tours, defaultTour = "" }) {
       if (res.ok) {
         setState("sent");
         form.reset();
+        setTour(defaultTour);
         return;
       }
       if (res.status === 501) {
@@ -48,15 +111,7 @@ export default function EnquiryForm({ tours, defaultTour = "" }) {
         <label>Email<input name="email" type="email" required autoComplete="email" /></label>
       </div>
       <div className={styles.row}>
-        <label>
-          Journey
-          <select name="tour" defaultValue={defaultTour}>
-            <option value="">Not sure yet</option>
-            {tours.map((t) => (
-              <option key={t.id} value={t.id}>{t.name}</option>
-            ))}
-          </select>
-        </label>
+        <JourneySelect tours={tours} value={tour} onChange={setTour} />
         <label>Preferred departure<input name="dates" placeholder="e.g. 25 July 2027" /></label>
       </div>
       <div className={styles.row}>
@@ -71,11 +126,11 @@ export default function EnquiryForm({ tours, defaultTour = "" }) {
       <input name="website" tabIndex={-1} autoComplete="off" className={styles.trap} aria-hidden="true" />
 
       <div>
-        <button className="btn solid" type="submit" disabled={state === "sending"}>
+        <button className={`btn solid ${styles.submit}`} type="submit" disabled={state === "sending"}>
           {state === "sending" ? "Sending…" : "Send enquiry"}
         </button>
       </div>
-      <p className={styles.status} role="status">
+      <p className={`${styles.status} ${state === "sent" ? styles.ok : ""}`} role="status">
         {state === "sent" && "Thank you. We'll reply within two working days."}
         {state === "error" && `Something went wrong. Please email ${SITE.email} directly.`}
         {state === "idle" && "We reply within two working days."}

@@ -1,4 +1,74 @@
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-.addr { font-size: 16px; line-height: 1.8; }
-.addr b { font-family: var(--display); font-size: 20px; font-weight: 600; display: block; }
-@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+.two {
+  --blue: #1f5fbf;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start; /* sticky ke liye zaroori */
+}
+
+/* Dark mode me blue halka. Agar tumhara dark mode alag selector use karta hai to yaha match kar lena */
+:global([data-theme="dark"]) .two { --blue: #6ea8ff; }
+
+/* Heading blue + thoda chhota (zoom-out feel) */
+.two h1.accent {
+  color: var(--blue);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.lead {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.accent { color: var(--blue); }
+.strong { color: var(--blue); font-weight: 600; }
+
+/* Sticky card */
+.card {
+  background: var(--card, var(--surface, #fff));
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 3px solid var(--blue);
+  border-radius: 12px;
+  padding: 24px 26px 22px;
+  position: sticky;
+  top: 110px;
+  box-shadow: 0 8px 28px rgba(15, 30, 60, 0.06);
+
+  /* card ab content jitna hi chauda hoga, right side ka extra space nahi */
+  width: fit-content;
+  max-width: 100%;
+  justify-self: start;
+}
+
+.addr { font-size: 15px; line-height: 1.7; }
+
+.addr b {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  color: var(--blue);
+}
+
+.addr a {
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+.addr a:hover { border-bottom-color: currentColor; opacity: 0.85; }
+
+.divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 18px 0 16px;
+}
+
+@media (max-width: 860px) {
+  .two { grid-template-columns: 1fr; }
+  .card { position: static; }
+}
