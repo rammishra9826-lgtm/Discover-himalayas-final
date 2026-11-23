@@ -34,10 +34,10 @@ const tour = (stageCount, o = {}) => ({
 });
 
 // ---- LADAKH: To the Highest Road on Earth ----------------------------------
-const LADAKH_PHOTO = "/images/journeys/ladakh-Hero.JPG";        // card + main picture (capital .JPG, exactly like the file name)
-const LADAKH_VIDEO_THUMB = "/images/journeys/ladakh-Hero.JPG";  // VIDEO thumbnail (put a separate file name here if you have one)
-const LADAKH_ROAD = "/images/journeys/ladakh-road.JPG";         // road thumbnail
-const LADAKH_CAMP = "/images/journeys/ladakh-camp.JPG";         // camp / stay thumbnail
+const LADAKH_PHOTO = "/images/journeys/ladakh-hero.jpg";        // card + main picture
+const LADAKH_VIDEO_THUMB = "/images/journeys/ladakh-hero.jpg";  // VIDEO thumbnail
+const LADAKH_ROAD = "/images/journeys/ladakh-road.jpg";         // road thumbnail
+const LADAKH_CAMP = "/images/journeys/ladakh-camp.jpg";         // camp / stay thumbnail
 const LADAKH_VIDEO = "https://youtu.be/4GNGrHnER7g";            // YouTube link, opens in a popup
 
 // The folder name has spaces, so they are written as %20 (safe for Next.js).
@@ -104,7 +104,7 @@ export const IMAGES = {
   journeys: {
      hero: "/images/journeys/journey-hero.png" ,
      herovideo: "/videos/journeys/Ladakh-hero-video.mp4",  // 16:9 drone video (.mp4)
-     thumbs:["/images/journeys/ladakh-Hero.JPG"]
+     
     },
 
   past: {
