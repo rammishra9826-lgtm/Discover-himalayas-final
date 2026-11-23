@@ -34,10 +34,10 @@ const tour = (stageCount, o = {}) => ({
 });
 
 // ---- LADAKH: To the Highest Road on Earth ----------------------------------
-const LADAKH_PHOTO = "/images/journeys/ladakh-hero.jpg";        // card + main picture
-const LADAKH_VIDEO_THUMB = "/images/journeys/ladakh-hero.jpg";  // VIDEO thumbnail
-const LADAKH_ROAD = "/images/journeys/ladakh-road.jpg";         // road thumbnail
-const LADAKH_CAMP = "/images/journeys/ladakh-camp.jpg";         // camp / stay thumbnail
+const LADAKH_PHOTO = "/images/journeys/ladakh-hero.JPG";        // card + main picture
+const LADAKH_VIDEO_THUMB = "/images/journeys/ladakh-hero.JPG";  // VIDEO thumbnail
+const LADAKH_ROAD = "/images/journeys/ladakh-road.JPG";         // road thumbnail
+const LADAKH_CAMP = "/images/journeys/ladakh-camp.JPG";         // camp / stay thumbnail        // camp / stay thumbnail
 const LADAKH_VIDEO = "https://youtu.be/4GNGrHnER7g";            // YouTube link, opens in a popup
 
 // The folder name has spaces, so they are written as %20 (safe for Next.js).
