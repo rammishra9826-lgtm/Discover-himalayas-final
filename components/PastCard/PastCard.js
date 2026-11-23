@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import MediaFrame from "@/components/MediaFrame/MediaFrame";
+import PastLightbox from "./PastLightbox";
 import { TOURS } from "@/data/tours";
 import { IMAGES } from "@/data/images";
 import styles from "./PastCard.module.css";
@@ -20,8 +21,14 @@ function getYouTubeId(url) {
 export default function PastCard({ item, index }) {
   const t = TOURS[item.tour];
   const videoId = getYouTubeId(item.video);
-  const [open, setOpen] = useState(false);       // panel DOM mein hai ya nahi
-  const [closing, setClosing] = useState(false); // band hone ki animation chal rahi hai
+  const [open, setOpen] = useState(false);       // video panel DOM mein hai ya nahi
+  const [closing, setClosing] = useState(false); // video panel band hone ki animation
+  const [lightbox, setLightbox] = useState(null); // null = band, number = photo index
+
+  // is departure ki photos (data/images.js -> IMAGES.past.photos)
+  const photos = (IMAGES.past.photos?.[index] ?? []).filter(Boolean);
+  const hasPhotos = photos.length > 0;
+  const extra = Math.max(0, photos.length - 4); // chhoti strip me jo photos nahi dikh rahi
 
   const openPanel = () => {
     setClosing(false);
@@ -51,11 +58,34 @@ export default function PastCard({ item, index }) {
     }
   };
 
+  const mainSrc = photos[0] ?? IMAGES.past.groups[index];
+  const mainFrame = (
+    <MediaFrame
+      aspect="16 / 10"
+      tone={index % 2 ? "warm" : "default"}
+      label="Group photo"
+      src={mainSrc}
+      alt={`${t.name}, ${item.when}`}
+    />
+  );
+
   return (
     <article className={styles.pcard}>
-      <Link href={`/journeys/${item.tour}`} className={styles.main}>
-        <MediaFrame aspect="16 / 10" tone={index % 2 ? "warm" : "default"} label="Group photo" src={IMAGES.past.groups[index]} alt={`${t.name}, ${item.when}`} />
-      </Link>
+      {/* Badi photo: click par photos khulti hain */}
+      {hasPhotos ? (
+        <button
+          type="button"
+          className={styles.photoBtn}
+          onClick={() => setLightbox(0)}
+          aria-label={`Open photos: ${t.name}, ${item.when}`}
+        >
+          {mainFrame}
+        </button>
+      ) : (
+        <div className={styles.main}>{mainFrame}</div>
+      )}
+
+      {/* Title: click par journeys page */}
       <div className={styles.meta}>
         <div className={styles.when}>{item.when}</div>
         <h3><Link href={`/journeys/${item.tour}`}>{t.name}</Link></h3>
@@ -77,18 +107,59 @@ export default function PastCard({ item, index }) {
               loading="lazy"
               className={styles.thumbImg}
             />
-            
             <span className={styles.thumbLabel}>Video</span>
           </button>
         ) : (
           <MediaFrame aspect="1 / 1" video label="Video" />
         )}
-        <MediaFrame aspect="1 / 1" label="Road" />
-        <MediaFrame aspect="1 / 1" label="Camp" />
-        <MediaFrame aspect="1 / 1" label="Pass" />
+
+        {hasPhotos ? (
+          [1, 2, 3].map((n) =>
+            photos[n] ? (
+              <button
+                key={n}
+                type="button"
+                className={styles.photoThumb}
+                onClick={() => setLightbox(n)}
+                aria-label={
+                  n === 3 && extra > 0
+                    ? `Open all ${photos.length} photos`
+                    : `Open photo ${n + 1}`
+                }
+              >
+                <MediaFrame
+                  fill
+                  src={photos[n]}
+                  alt={`${t.name} photo ${n + 1}`}
+                  sizes="(max-width: 860px) 25vw, 12vw"
+                />
+                {n === 3 && extra > 0 && <span className={styles.more}>+{extra}</span>}
+              </button>
+            ) : (
+              <MediaFrame key={n} aspect="1 / 1" label={["", "Road", "Camp", "Pass"][n]} />
+            )
+          )
+        ) : (
+          <>
+            <MediaFrame aspect="1 / 1" label="Road" />
+            <MediaFrame aspect="1 / 1" label="Camp" />
+            <MediaFrame aspect="1 / 1" label="Pass" />
+          </>
+        )}
       </div>
       <p className={styles.note}>{item.note}</p>
 
+      {/* Photo lightbox */}
+      {lightbox !== null && hasPhotos && (
+        <PastLightbox
+          photos={photos}
+          startIndex={lightbox}
+          title={`${t.name} · ${item.when}`}
+          onClose={() => setLightbox(null)}
+        />
+      )}
+
+      {/* Video panel */}
       {open && videoId && (
         <div
           className={`${styles.overlay} ${closing ? styles.overlayOut : ""}`}

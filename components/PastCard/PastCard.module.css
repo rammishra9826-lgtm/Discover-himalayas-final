@@ -52,3 +52,15 @@
 @media (prefers-reduced-motion: reduce) {
   .overlay, .overlayOut, .panel, .panelOut, .panelInfo { animation-duration: .01s; animation-delay: 0s; }
 }
+/* ---- Clickable photos (opens lightbox) ---- */
+.photoBtn { display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; border-radius: 4px; overflow: hidden; cursor: zoom-in; }
+.photoBtn img { transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+.photoBtn:hover img { transform: scale(1.04); }
+.photoBtn:focus-visible { outline: 3px solid var(--lake-deep); outline-offset: 3px; }
+
+.photoThumb { position: relative; display: block; width: 100%; aspect-ratio: 1 / 1; padding: 0; margin: 0; border: 0; border-radius: 4px; overflow: hidden; background: #2b3a45; cursor: zoom-in; }
+.photoThumb img { transition: transform .5s ease; }
+.photoThumb:hover img { transform: scale(1.08); }
+.photoThumb:focus-visible { outline: 3px solid var(--lake-deep); outline-offset: 2px; }
+
+.more { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; background: rgba(12, 16, 19, .55); color: #fff; font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: .04em; }

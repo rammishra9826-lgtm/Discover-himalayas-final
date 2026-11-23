@@ -52,6 +52,29 @@ const LADAKH_STAGES = [
   `${LADAKH_DIR}/Stage-7-Tso-Morir.JPG`,                 // stage 7
 ];
 
+// ---- PAST JOURNEYS: To the Highest Road on Earth (6 photos) ----------------
+// The folder name has spaces, so they are written as %20 (safe for Next.js).
+const HR_DIR = "/images/past%20journeys/highest%20road%20on%20earth";
+const HIGHEST_ROAD_PHOTOS = [
+  `${HR_DIR}/HR1.jpeg`,
+  `${HR_DIR}/HR2.png`,
+  `${HR_DIR}/HR3.png`,
+  `${HR_DIR}/HR4.png`,
+  `${HR_DIR}/HR5.png`,
+  `${HR_DIR}/HR6.png`,
+];
+
+// ---- PAST JOURNEYS: Little Tibet (6 photos) ----
+const GG_DIR = "/images/past%20journeys/ghats%20and%20goa";
+const GHATS_AND_GOA_PHOTOS = [
+  `${GG_DIR}/GG1.png`,
+  `${GG_DIR}/GG2.png`,
+  `${GG_DIR}/GG3.png`,
+  `${GG_DIR}/GG4.jpeg`,
+  `${GG_DIR}/GG5.png`,
+  `${GG_DIR}/GG6.png`,
+];
+
 /* Example: how to fill another journey later (copy this, change the names).
    Put its files in  public/images/journeys/mustang/  and use it below as  mustang: MUSTANG
 
@@ -112,6 +135,14 @@ export const IMAGES = {
     passport: null,
     // one entry per departure in data/past.js, same order
     groups: [null, null, null, null, null, null],
+    // photos of each departure (open in the lightbox), same order as data/past.js
+    photos: [
+      HIGHEST_ROAD_PHOTOS,   // 1. To the Highest Road on Earth
+      
+       [], [], [],
+       GHATS_AND_GOA_PHOTOS,
+        [],    // other departures: add their photos later
+    ],
   },
   custom: { hero: "/images/custom-tour/private-group-remote-road.png", cases: [null, null, null] },
   fleet: {
