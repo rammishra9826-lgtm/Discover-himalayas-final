@@ -55,7 +55,7 @@ export default async function TourPage({ params }) {
   return (
     <>
       <PageHero
-        src={img.hero}
+        src={img.heroVideo ?? img.hero}
         label={`Drone still or short clip: ${t.region} hero, rider from behind`}
         kicker={`// ${t.region} · ${t.country}`}
         title={t.name}

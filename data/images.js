@@ -7,31 +7,71 @@
 // While a value is null the site shows a grey placeholder with a caption.
 // Videos: use a .mp4 path (it plays muted and looping).
 // Tip: export photos as .jpg/.webp, about 2000px wide; Next.js resizes them.
+// File names are case-sensitive: write them exactly as they appear in the folder.
 // ---------------------------------------------------------------------------
 
-// TEMPORARY: the Ladakh photo + video are used on every journey for now.
-// Later, replace a journey's  tour(n)  with its own values (see the commented example below).
-const LADAKH_PHOTO = "/images/journeys/ladakh-hero.JPG"; // capital .JPG, exactly like the file name
-const LADAKH_VIDEO = "https://youtu.be/4GNGrHnER7g";      // YouTube link, opens in a popup
-
-const tour = (stageCount) => ({
-  card: LADAKH_PHOTO,                                   // big picture on the journey card (4:3)
-  hero: null,                                           // big picture at the top of the journey page (16:9)
-  map: null,                                            // route map image
-  video: LADAKH_VIDEO,                                  // YouTube link for the VIDEO thumbnail
-  thumbs: [LADAKH_PHOTO, LADAKH_PHOTO, LADAKH_PHOTO],   // video, road, stay
-  stages: Array(stageCount).fill(null),                 // one picture per stage (3:2)
+// ---------------------------------------------------------------------------
+// JOURNEYS: every journey has its own photos and video.
+//
+// tour(stageCount, { ...only the things you have })
+//   card      big picture on the journey card (4:3)
+//   hero      big picture at the top of the journey page (16:9)
+//   heroVideo background .mp4 at the top of the journey page (16:9)
+//   map       route map image
+//   video     YouTube link for the VIDEO thumbnail (opens in a popup)
+//   thumbs    3 pictures: [video thumbnail, road, stay]
+//   stages    one picture per stage (3:2), same count as stageCount
+// Anything you leave out stays null (grey placeholder).
+// ---------------------------------------------------------------------------
+const tour = (stageCount, o = {}) => ({
+  card: o.card ?? null,
+  hero: o.hero ?? null,
+  heroVideo: o.heroVideo ?? null,
+  map: o.map ?? null,
+  video: o.video ?? null,
+  thumbs: o.thumbs ?? [null, null, null],
+  stages: o.stages ?? Array(stageCount).fill(null),
 });
 
-/* Example of a journey with its own files later:
-   mustang: {
+// ---- LADAKH: To the Highest Road on Earth ----------------------------------
+const LADAKH_PHOTO = "/images/journeys/ladakh-Hero.JPG";        // card + main picture (capital .JPG, exactly like the file name)
+const LADAKH_VIDEO_THUMB = "/images/journeys/ladakh-Hero.JPG";  // VIDEO thumbnail (put a separate file name here if you have one)
+const LADAKH_ROAD = "/images/journeys/ladakh-road.JPG";         // road thumbnail
+const LADAKH_CAMP = "/images/journeys/ladakh-camp.JPG";         // camp / stay thumbnail
+const LADAKH_VIDEO = "https://youtu.be/4GNGrHnER7g";            // YouTube link, opens in a popup
+
+// The folder name has spaces, so they are written as %20 (safe for Next.js).
+const LADAKH_DIR = "/images/journeys/Highest%20Road%20on%20Earth";
+const LADAKH_STAGES = [
+  `${LADAKH_DIR}/Stage1-Pass-summit.JPG`,                // stage 1
+  `${LADAKH_DIR}/Stage2-Monastery-indus.JPG`,            // stage 2
+  `${LADAKH_DIR}/Stage3-Hunder-dunes-Khardung.JPG`,      // stage 3
+  `${LADAKH_DIR}/stage-4-Lakeshore-road.JPG`,            // stage 4 (small "s", as in the file name)
+  `${LADAKH_DIR}/Stage-5-Changpa-camp.JPG`,              // stage 5
+  `${LADAKH_DIR}/Stage6-Umling-La.JPG`,                  // stage 6
+  `${LADAKH_DIR}/Stage-7-Tso-Morir.JPG`,                 // stage 7
+];
+
+/* Example: how to fill another journey later (copy this, change the names).
+   Put its files in  public/images/journeys/mustang/  and use it below as  mustang: MUSTANG
+
+   const MUSTANG = tour(5, {
      card: "/images/journeys/mustang/card.jpg",
-     hero: null,
-     map: null,
+     heroVideo: "/videos/journeys/Mustang-hero-video.mp4",
      video: "https://youtu.be/XXXXXXXXXXX",
-     thumbs: ["/images/journeys/mustang/video.jpg", "/images/journeys/mustang/road.jpg", "/images/journeys/mustang/stay.jpg"],
-     stages: [null, null, null, null, null],
-   },
+     thumbs: [
+       "/images/journeys/mustang/video.jpg",
+       "/images/journeys/mustang/road.jpg",
+       "/images/journeys/mustang/stay.jpg",
+     ],
+     stages: [
+       "/images/journeys/mustang/stage-1.jpg",
+       "/images/journeys/mustang/stage-2.jpg",
+       "/images/journeys/mustang/stage-3.jpg",
+       "/images/journeys/mustang/stage-4.jpg",
+       "/images/journeys/mustang/stage-5.jpg",
+     ],
+   });
 */
 
 export const IMAGES = {
@@ -61,7 +101,11 @@ export const IMAGES = {
       "/images/home/home-buttom5.jpg",
     ],
   },
-  journeys: { hero: "/images/journeys/group-riding-toward-pass-early-morning.png" },
+  journeys: {
+     hero: "/images/journeys/journey-hero.png" ,
+     herovideo: "/videos/journeys/Ladakh-hero-video.mp4",  // 16:9 drone video (.mp4)
+     thumbs:["/images/journeys/ladakh-Hero.JPG"]
+    },
 
   past: {
     heroVideo: "/videos/Past-journeys/pastjourney-hero.mp4",  // 16:9 drone video (.mp4)
@@ -100,8 +144,16 @@ export const IMAGES = {
   journal: {
     "khardung-la": { hero: null, card: null },
   },
+
+  // Each journey below has its own values. Fill the others the same way as Ladakh.
   tours: {
-    ladakh: tour(7),
+    ladakh: tour(7, {
+      card: LADAKH_PHOTO,
+      heroVideo: "/videos/journeys/Ladakh-hero-video.mp4",
+      video: LADAKH_VIDEO,
+      thumbs: [LADAKH_VIDEO_THUMB, LADAKH_ROAD, LADAKH_CAMP],   // video, road, stay
+      stages: LADAKH_STAGES,
+    }),
     mustang: tour(5),
     heaven: tour(6),
     tibet: tour(5),
