@@ -112,6 +112,25 @@ const HIGHEST_ROAD_PHOTOS_2025 = [
   `${HRE_DIR}/HRE6.png`,
 ];
 
+//------------PAST JOURNEYS: WILDLIFE and SPICE TRAIL (6 photos) ----
+
+
+const WST_DIR = "/images/past%20journeys/wildlife%20and%20spice%20trail";
+const WILDLIFE_AND_SPICE_TRAIL_PHOTOS = [
+  `${WST_DIR}/spice-trail-hero-photo.png`,
+  `${WST_DIR}/camp.jpg`,
+  `${WST_DIR}/road.png`,
+  `${WST_DIR}/pass.png`,
+  `${WST_DIR}/view.png`,
+  `${WST_DIR}/view2.png`,
+];
+
+
+
+
+
+
+
 /* Example: how to fill another journey later (copy this, change the names).
    Put its files in  public/images/journeys/mustang/  and use it below as  mustang: MUSTANG
 
@@ -176,9 +195,9 @@ export const IMAGES = {
     // photos of each departure (open in the lightbox), same order as data/past.js
     photos: [
       HIGHEST_ROAD_PHOTOS, // 1
-      [],
-      [],
-      [], // 2, 3, 4
+      [],//2
+      WILDLIFE_AND_SPICE_TRAIL_PHOTOS, // 3
+      [], //  4
       GHATS_AND_GOA_PHOTOS, // 5
       HIGHEST_ROAD_PHOTOS_2025, // 6
     ],
