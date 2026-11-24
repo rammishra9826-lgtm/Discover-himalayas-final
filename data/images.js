@@ -118,7 +118,7 @@ const HIGHEST_ROAD_PHOTOS_2025 = [
 const WST_DIR = "/images/past%20journeys/wildlife%20and%20spice%20trail";
 const WILDLIFE_AND_SPICE_TRAIL_PHOTOS = [
   `${WST_DIR}/spice-trail-hero-photo.png`,
-  `${WST_DIR}/camp.jpg`,
+  `${WST_DIR}/camp.JPG`,
   `${WST_DIR}/road.png`,
   `${WST_DIR}/pass.png`,
   `${WST_DIR}/view.png`,
