@@ -34,22 +34,22 @@ const tour = (stageCount, o = {}) => ({
 });
 
 // ---- LADAKH: To the Highest Road on Earth ----------------------------------
-const LADAKH_PHOTO = "/images/journeys/ladakh-hero.JPG";        // card + main picture
-const LADAKH_VIDEO_THUMB = "/images/journeys/ladakh-hero.JPG";  // VIDEO thumbnail
-const LADAKH_ROAD = "/images/journeys/ladakh-road.JPG";         // road thumbnail
-const LADAKH_CAMP = "/images/journeys/ladakh-camp.JPG";         // camp / stay thumbnail        // camp / stay thumbnail
-const LADAKH_VIDEO = "https://youtu.be/4GNGrHnER7g";            // YouTube link, opens in a popup
+const LADAKH_PHOTO = "/images/journeys/ladakh-hero.JPG"; // card + main picture
+const LADAKH_VIDEO_THUMB = "/images/journeys/ladakh-hero.JPG"; // VIDEO thumbnail
+const LADAKH_ROAD = "/images/journeys/ladakh-road.JPG"; // road thumbnail
+const LADAKH_CAMP = "/images/journeys/ladakh-camp.JPG"; // camp / stay thumbnail        // camp / stay thumbnail
+const LADAKH_VIDEO = "https://youtu.be/4GNGrHnER7g"; // YouTube link, opens in a popup
 
 // The folder name has spaces, so they are written as %20 (safe for Next.js).
 const LADAKH_DIR = "/images/journeys/Highest%20Road%20on%20Earth";
 const LADAKH_STAGES = [
-  `${LADAKH_DIR}/Stage1-Pass-summit.JPG`,                // stage 1
-  `${LADAKH_DIR}/Stage2-Monastery-indus.JPG`,            // stage 2
-  `${LADAKH_DIR}/Stage3-Hunder-dunes-Khardung.JPG`,      // stage 3
-  `${LADAKH_DIR}/stage-4-Lakeshore-road.JPG`,            // stage 4 (small "s", as in the file name)
-  `${LADAKH_DIR}/Stage-5-Changpa-camp.JPG`,              // stage 5
-  `${LADAKH_DIR}/Stage6-Umling-La.JPG`,                  // stage 6
-  `${LADAKH_DIR}/Stage-7-Tso-Morir.JPG`,                 // stage 7
+  `${LADAKH_DIR}/Stage1-Pass-summit.JPG`, // stage 1
+  `${LADAKH_DIR}/Stage2-Monastery-indus.JPG`, // stage 2
+  `${LADAKH_DIR}/Stage3-Hunder-dunes-Khardung.JPG`, // stage 3
+  `${LADAKH_DIR}/stage-4-Lakeshore-road.JPG`, // stage 4 (small "s", as in the file name)
+  `${LADAKH_DIR}/Stage-5-Changpa-camp.JPG`, // stage 5
+  `${LADAKH_DIR}/Stage6-Umling-La.JPG`, // stage 6
+  `${LADAKH_DIR}/Stage-7-Tso-Morir.JPG`, // stage 7
 ];
 
 // ---- PAST JOURNEYS: To the Highest Road on Earth (6 photos) ----------------
@@ -64,7 +64,7 @@ const HIGHEST_ROAD_PHOTOS = [
   `${HR_DIR}/HR6.png`,
 ];
 
-// ---- PAST JOURNEYS: Little Tibet (6 photos) ----
+// ---- PAST JOURNEYS: GHATS AND GOA (6 photos) ----
 const GG_DIR = "/images/past%20journeys/ghats%20and%20goa";
 const GHATS_AND_GOA_PHOTOS = [
   `${GG_DIR}/GG1.png`,
@@ -73,6 +73,17 @@ const GHATS_AND_GOA_PHOTOS = [
   `${GG_DIR}/GG4.jpeg`,
   `${GG_DIR}/GG5.png`,
   `${GG_DIR}/GG6.png`,
+];
+
+// ---- PAST JOURNEYS: HIGHEST ROAD IN EARTH 2025(6 photos) ----
+const HRE_DIR = "/images/past%20journeys/highest%20road%20on%20earth%202025";
+const HIGHEST_ROAD_PHOTOS_2025 = [
+  `${HRE_DIR}/HRE1.png`,
+  `${HRE_DIR}/HRE2.png`,
+  `${HRE_DIR}/HRE3.png`,
+  `${HRE_DIR}/HRE4.png`,
+  `${HRE_DIR}/HRE5.png`,
+  `${HRE_DIR}/HRE6.png`,
 ];
 
 /* Example: how to fill another journey later (copy this, change the names).
@@ -99,76 +110,81 @@ const GHATS_AND_GOA_PHOTOS = [
 
 export const IMAGES = {
   home: {
-    heroVideo: "/videos/home/hero-promo.mp4",   // 16:9 drone video (.mp4)
+    heroVideo: "/videos/home/hero-promo.mp4", // 16:9 drone video (.mp4)
     gallery: [
-      "/images/home/pangong-shoreline-bikes.png",    // 1 wide
-      "/images/home/prayer-flags-khardung-la.png",   // portrait
-      "/images/home/rider-portrait-chang-la.png",    // portrait
-      "/images/home/Shyok-road-water-crossing.png",  // portrait
-      "/images/home/group-tso-moriri-camp.png",      // portrait
-    ],                                               // 5 pictures: 1 wide + 4 portrait
-    people: "/images/home/vinod-briefing-dawn.png",  // Vinod briefing the group (4:5)
-    fleetWide: "/images/home/the-fleet.png",            // wide photo of the fleet (21:9)
-    fleetSlides: [                                   // fleet slider on the home page (left/right buttons)
+      "/images/home/pangong-shoreline-bikes.png", // 1 wide
+      "/images/home/prayer-flags-khardung-la.png", // portrait
+      "/images/home/rider-portrait-chang-la.png", // portrait
+      "/images/home/Shyok-road-water-crossing.png", // portrait
+      "/images/home/group-tso-moriri-camp.png", // portrait
+    ], // 5 pictures: 1 wide + 4 portrait
+    people: "/images/home/vinod-briefing-dawn.png", // Vinod briefing the group (4:5)
+    fleetWide: "/images/home/the-fleet.png", // wide photo of the fleet (21:9)
+    fleetSlides: [
+      // fleet slider on the home page (left/right buttons)
       "/images/home/the-fleet.png",
       "/images/home/the-fleet2.png",
       "/images/home/the-fleet3.png",
       "/images/home/the-fleet4.png",
     ],
-    custom: "/images/home/home-buttom.png",  // private group on an unmarked road (4:5)
-    customSlides: [                          // custom-tours slideshow, changes every 8s
+    custom: "/images/home/home-buttom.png", // private group on an unmarked road (4:5)
+    customSlides: [
+      // custom-tours slideshow, changes every 8s
       "/images/home/home-buttom.png",
       "/images/home/home-buttom-2.jpeg",
       "/images/home/home-buttom3.jpg",
-      "/images/home/home-buttom4.png",       // converted from .heif
+      "/images/home/home-buttom4.png", // converted from .heif
       "/images/home/home-buttom5.jpg",
     ],
   },
   journeys: {
-     hero: "/images/journeys/journey-hero.png" ,
-     herovideo: "/videos/journeys/Ladakh-hero-video.mp4",  // 16:9 drone video (.mp4)
-     
-    },
+    hero: "/images/journeys/journey-hero.png",
+    herovideo: "/videos/journeys/Ladakh-hero-video.mp4", // 16:9 drone video (.mp4)
+  },
 
   past: {
-    heroVideo: "/videos/Past-journeys/pastjourney-hero.mp4",  // 16:9 drone video (.mp4)
+    heroVideo: "/videos/Past-journeys/pastjourney-hero.mp4", // 16:9 drone video (.mp4)
     passport: null,
     // one entry per departure in data/past.js, same order
     groups: [null, null, null, null, null, null],
     // photos of each departure (open in the lightbox), same order as data/past.js
     photos: [
-      HIGHEST_ROAD_PHOTOS,   // 1. To the Highest Road on Earth
-      
-       [], [], [],
-       GHATS_AND_GOA_PHOTOS,
-        [],    // other departures: add their photos later
+      HIGHEST_ROAD_PHOTOS, // 1
+      [],
+      [],
+      [], // 2, 3, 4
+      GHATS_AND_GOA_PHOTOS, // 5
+      HIGHEST_ROAD_PHOTOS_2025, // 6
     ],
   },
-  custom: { hero: "/images/custom-tour/private-group-remote-road.png", cases: [null, null, null] },
+  custom: {
+    hero: "/images/custom-tour/private-group-remote-road.png",
+    cases: [null, null, null],
+  },
   fleet: {
-    hero: "/images/fleet/fleet.png",        // top of the /fleet page
+    hero: "/images/fleet/fleet.png", // top of the /fleet page
     archive: "/images/fleet/REMAIN.png",
     bikes: [
-      "/images/fleet/RE450.png",             // Himalayan 450
-      "/images/fleet/RE411.png",             // Himalayan 411
-      "/images/fleet/RE500.png",             // Bullet 500
+      "/images/fleet/RE450.png", // Himalayan 450
+      "/images/fleet/RE411.png", // Himalayan 411
+      "/images/fleet/RE500.png", // Bullet 500
     ],
-    support:"/images/fleet/support-vehicle.png",  // support vehicle
+    support: "/images/fleet/support-vehicle.png", // support vehicle
   },
   about: { hero: null },
   crew: {
-    hero: "/images/crew/crew_with_vehicle.png",  // top of the /crew page
+    hero: "/images/crew/crew_with_vehicle.png", // top of the /crew page
     // same order as CREW in data/crew.js
     portraits: [
-      "/images/crew/vinod.jpeg",          // Vinod Kaistha
-      "/images/crew/nadia.jpeg",          // Nadia Kaistha
-      "/images/crew/Uwe-balser.jpeg",     // Uwe Balser
-      "/images/crew/sahil.jpeg",          // Sahil Kaistha
-      "/images/crew/jaydeep.jpeg",        // Jaydeep Mishra
-      "/images/crew/tony.jpeg",           // Tony
-      "/images/crew/Surya-Kaistha.jpeg",  // Surya Kaistha
-      "/images/crew/aloo.jpeg",           // Aloo
-      "/images/crew/ramesh.jpeg",         // Ramesh
+      "/images/crew/vinod.jpeg", // Vinod Kaistha
+      "/images/crew/nadia.jpeg", // Nadia Kaistha
+      "/images/crew/Uwe-balser.jpeg", // Uwe Balser
+      "/images/crew/sahil.jpeg", // Sahil Kaistha
+      "/images/crew/jaydeep.jpeg", // Jaydeep Mishra
+      "/images/crew/tony.jpeg", // Tony
+      "/images/crew/Surya-Kaistha.jpeg", // Surya Kaistha
+      "/images/crew/aloo.jpeg", // Aloo
+      "/images/crew/ramesh.jpeg", // Ramesh
     ],
   },
   // journal: key = post "id" in data/posts.js (hero) ; the card picture uses card
@@ -182,7 +198,7 @@ export const IMAGES = {
       card: LADAKH_PHOTO,
       heroVideo: "/videos/journeys/Ladakh-hero-video.mp4",
       video: LADAKH_VIDEO,
-      thumbs: [LADAKH_VIDEO_THUMB, LADAKH_ROAD, LADAKH_CAMP],   // video, road, stay
+      thumbs: [LADAKH_VIDEO_THUMB, LADAKH_ROAD, LADAKH_CAMP], // video, road, stay
       stages: LADAKH_STAGES,
     }),
     mustang: tour(5),
