@@ -33,12 +33,36 @@ const tour = (stageCount, o = {}) => ({
   stages: o.stages ?? Array(stageCount).fill(null),
 });
 
-// ---- LADAKH: To the Highest Road on Earth ----------------------------------
+// ---- LADAKH: To the Highest Road on Earth  (JOURNEY PAGE) ----------------------------------
 const LADAKH_PHOTO = "/images/journeys/ladakh-hero.JPG"; // card + main picture
 const LADAKH_VIDEO_THUMB = "/images/journeys/ladakh-hero.JPG"; // VIDEO thumbnail
 const LADAKH_ROAD = "/images/journeys/ladakh-road.JPG"; // road thumbnail
 const LADAKH_CAMP = "/images/journeys/ladakh-camp.JPG"; // camp / stay thumbnail        // camp / stay thumbnail
 const LADAKH_VIDEO = "https://youtu.be/4GNGrHnER7g"; // YouTube link, opens in a popup
+
+// ---- KONKAN TO KANYAKUMARI: A Wildlife & Spice Trail (JOURNEY PAGE)  -----------------------
+// File names are case-sensitive: note the small "k" in "kanyakumari-hero".
+const K2K_PHOTO = "/images/journeys/Konkan-kanyakumari-hero.JPG"; // card + main picture
+const K2K_VIDEO_THUMB = "/images/journeys/Konkan-kanyakumari-hero.JPG"; // VIDEO thumbnail
+const K2K_ROAD = "/images/journeys/Konkan-Kanyakumari-road.JPG"; // road thumbnail
+const K2K_CAMP = "/images/journeys/Konkan-Kanyakumari-camp.JPG"; // stay thumbnail
+const K2K_VIDEO = "https://youtu.be/biy7VCOMBD8"; // YouTube link, opens in a popup
+
+
+//-------------------------------------------------------------
+// ---- LITTLE TIBET  (JOURNEY PAGE) --------------------------------
+
+
+const TIBET_PHOTO = "/images/journeys/little-tibet-hero-photo.JPG"; // card + main picture
+const TIBET_VIDEO_THUMB = "/images/journeys/little-tibet-hero-photo.JPG"; // VIDEO thumbnail
+const TIBET_ROAD = "/images/journeys/little-tibet-road.png"; // road thumbnail
+const TIBET_CAMP = "/images/journeys/little-tibet-camp.JPG"; // stay thumbnail
+const TIBET_VIDEO = "https://youtu.be/XXXXXXXXXXX"; // YouTube link, opens in a popup
+
+
+
+
+
 
 // The folder name has spaces, so they are written as %20 (safe for Next.js).
 const LADAKH_DIR = "/images/journeys/Highest%20Road%20on%20Earth";
@@ -51,6 +75,8 @@ const LADAKH_STAGES = [
   `${LADAKH_DIR}/Stage6-Umling-La.JPG`, // stage 6
   `${LADAKH_DIR}/Stage-7-Tso-Morir.JPG`, // stage 7
 ];
+
+
 
 // ---- PAST JOURNEYS: To the Highest Road on Earth (6 photos) ----------------
 // The folder name has spaces, so they are written as %20 (safe for Next.js).
@@ -156,11 +182,16 @@ export const IMAGES = {
       GHATS_AND_GOA_PHOTOS, // 5
       HIGHEST_ROAD_PHOTOS_2025, // 6
     ],
+
   },
   custom: {
     hero: "/images/custom-tour/private-group-remote-road.png",
     cases: [null, null, null],
+
   },
+
+
+
   fleet: {
     hero: "/images/fleet/fleet.png", // top of the /fleet page
     archive: "/images/fleet/REMAIN.png",
@@ -203,10 +234,31 @@ export const IMAGES = {
     }),
     mustang: tour(5),
     heaven: tour(6),
-    tibet: tour(5),
+
+
+
+
+    tibet: tour(5 ,{
+      card: TIBET_PHOTO,
+      heroVideo: "/videos/journeys/Little-Tibet-hero-video.mp4",
+      video: TIBET_VIDEO,
+      thumbs: [TIBET_VIDEO_THUMB, TIBET_ROAD, TIBET_CAMP], // video, road, stay
+      stages: Array(5).fill(null)
+  }),
+
+
+  
+
+
     bhutan: tour(5),
     rajasthan: tour(6),
     goa: tour(6),
-    k2k: tour(6),
+
+    k2k: tour(6, {
+      card: K2K_PHOTO,
+      heroVideo: "/videos/journeys/Konkan-kanyakumari-hero-video.mp4",
+      video: K2K_VIDEO,
+      thumbs: [K2K_VIDEO_THUMB, K2K_ROAD, K2K_CAMP], // video, road, stay
+    }),
   },
 };
