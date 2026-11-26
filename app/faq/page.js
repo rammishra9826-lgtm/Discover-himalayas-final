@@ -1,6 +1,6 @@
 import Accordion from "@/components/Accordion/Accordion";
 import { FAQ } from "@/data/faq";
-
+import "./faq.modlue.css";
 export const metadata = {
   title: "FAQ",
   description: "Questions riders ask: experience, bikes, altitude, pillions, what's included and the Rider Passport.",

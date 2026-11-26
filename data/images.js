@@ -48,7 +48,6 @@ const K2K_ROAD = "/images/journeys/Konkan-Kanyakumari-road.JPG"; // road thumbna
 const K2K_CAMP = "/images/journeys/Konkan-Kanyakumari-camp.JPG"; // stay thumbnail
 const K2K_VIDEO = "https://youtu.be/biy7VCOMBD8"; // YouTube link, opens in a popup
 
-
 //-------------------------------------------------------------
 // ---- LITTLE TIBET  (JOURNEY PAGE) --------------------------------
 
@@ -65,7 +64,6 @@ const MUSTANG_ROAD = "/images/journeys/upper-mustang-road.png"; // road thumbnai
 const MUSTANG_CAMP = "/images/journeys/upper-mustang-camp.png"; // stay thumbnail
 const MUSTANG_VIDEO = "https://youtu.be/XXXXXXXXXXX"; // YouTube link, opens in a popup
 
-
 //----------ZANSKAR (JOURNEY PAGE)HIGHWAY THROUGH HEAVEN --------------------------------
 
 const zanskar_PHOTO = "/images/journeys/zanskar-hero-photo.png"; // card + main picture
@@ -73,7 +71,6 @@ const zanskar_VIDEO_THUMB = "/images/journeys/zanskar-hero-photo.png"; // VIDEO 
 const zanskar_ROAD = "/images/journeys/zanskar-road.png";
 const zanskar_CAMP = "/images/journeys/zanskar-camp.png"; // stay thumbnail
 const zanskar_VIDEO = "https://youtu.be/XXXXXXXXXXX"; // YouTube link, opens in a popup
-
 
 // The folder name has spaces, so they are written as %20 (safe for Next.js).
 const LADAKH_DIR = "/images/journeys/Highest%20Road%20on%20Earth";
@@ -87,10 +84,8 @@ const LADAKH_STAGES = [
   `${LADAKH_DIR}/Stage-7-Tso-Morir.JPG`, // stage 7
 ];
 
-
-
 // stages -------------------------------------------
-const UPPER_MUSTANG_DIR  = "/images/journeys/Upper%20Mustang%20&%20Manang"; // 7 photos
+const UPPER_MUSTANG_DIR = "/images/journeys/Upper%20Mustang%20&%20Manang"; // 7 photos
 const UPPER_MUSTANG_STAGES = [
   `${UPPER_MUSTANG_DIR}/stage1.png`, // stage 1
   `${UPPER_MUSTANG_DIR}/stage2.png`, // stage 2
@@ -99,7 +94,26 @@ const UPPER_MUSTANG_STAGES = [
   `${UPPER_MUSTANG_DIR}/Stage 5 Kora La border marker.png`, // stage 5
 ];
 
+//---------stages for litte tibet (spiti kinnor) ----------------
+const little_tibet_DIR = "/images/journeys/Little%20Tibet"; // 5 photos
+const little_tibet_STAGES = [
+  `${little_tibet_DIR}/stage1.png`,
+  `${little_tibet_DIR}/stage2.png`,
+  `${little_tibet_DIR}/stage3.png`,
+  `${little_tibet_DIR}/stage4.png`,
+  `${little_tibet_DIR}/stage5.png`,
+];
 
+//---------zanskar stages (highway through heaven) ----------------
+const zanskar_DIR = "/images/journeys/Highway%20through%20Heaven"; // 6 photos
+const zanskar_STAGES = [
+  `${zanskar_DIR}/stage1.png`,
+  `${zanskar_DIR}/stage2.png`,
+  `${zanskar_DIR}/stage3.png`,
+  `${zanskar_DIR}/stage4.png`,
+  `${zanskar_DIR}/stage5.png`,
+  `${zanskar_DIR}/stage6.png`,
+];
 
 // ---- PAST JOURNEYS: To the Highest Road on Earth (6 photos) ----------------
 // The folder name has spaces, so they are written as %20 (safe for Next.js).
@@ -137,7 +151,6 @@ const HIGHEST_ROAD_PHOTOS_2025 = [
 
 //------------PAST JOURNEYS: WILDLIFE and SPICE TRAIL (6 photos) ----
 
-
 const WST_DIR = "/images/past%20journeys/wildlife%20and%20spice%20trail";
 const WILDLIFE_AND_SPICE_TRAIL_PHOTOS = [
   `${WST_DIR}/spice-trail-hero-photo.png`,
@@ -147,12 +160,6 @@ const WILDLIFE_AND_SPICE_TRAIL_PHOTOS = [
   `${WST_DIR}/view.png`,
   `${WST_DIR}/view2.png`,
 ];
-
-
-
-
-
-
 
 /* Example: how to fill another journey later (copy this, change the names).
    Put its files in  public/images/journeys/mustang/  and use it below as  mustang: MUSTANG
@@ -218,21 +225,17 @@ export const IMAGES = {
     // photos of each departure (open in the lightbox), same order as data/past.js
     photos: [
       HIGHEST_ROAD_PHOTOS, // 1
-      [],//2
+      [], //2
       WILDLIFE_AND_SPICE_TRAIL_PHOTOS, // 3
       [], //  4
       GHATS_AND_GOA_PHOTOS, // 5
       HIGHEST_ROAD_PHOTOS_2025, // 6
     ],
-
   },
   custom: {
     hero: "/images/custom-tour/private-group-remote-road.png",
     cases: [null, null, null],
-
   },
-
-
 
   fleet: {
     hero: "/images/fleet/fleet.png", // top of the /fleet page
@@ -274,44 +277,32 @@ export const IMAGES = {
       thumbs: [LADAKH_VIDEO_THUMB, LADAKH_ROAD, LADAKH_CAMP], // video, road, stay
       stages: LADAKH_STAGES,
     }),
-    mustang: tour(5,{
+    mustang: tour(5, {
       card: MUSTANG_PHOTO,
       heroVideo: "/videos/journeys/Upper-Mustang-hero-video.mp4",
       video: MUSTANG_VIDEO,
       thumbs: [MUSTANG_VIDEO_THUMB, MUSTANG_ROAD, MUSTANG_CAMP], // video, road, stay
       stages: UPPER_MUSTANG_STAGES,
     }),
-    heaven: tour(6,{
+    heaven: tour(6, {
       card: zanskar_PHOTO,
       heroVideo: "/videos/journeys/Highway-through-heaven-hero-video.mp4",
       video: zanskar_VIDEO,
       thumbs: [zanskar_VIDEO_THUMB, zanskar_ROAD, zanskar_CAMP], // video, road, stay
-      stages: Array(6).fill(null)
-
-
-
-
-
-
+      stages: zanskar_STAGES,
     }),
 
-
-
-
-    tibet: tour(5 ,{
+    tibet: tour(5, {
       card: TIBET_PHOTO,
       heroVideo: "/videos/journeys/Little-Tibet-hero-video.mp4",
       video: TIBET_VIDEO,
       thumbs: [TIBET_VIDEO_THUMB, TIBET_ROAD, TIBET_CAMP], // video, road, stay
-      stages: Array(5).fill(null)
-  }),
-
+      stages: little_tibet_STAGES,
+    }),
 
     bhutan: tour(5),
     rajasthan: tour(6),
     goa: tour(6),
-
-
 
     k2k: tour(6, {
       card: K2K_PHOTO,
