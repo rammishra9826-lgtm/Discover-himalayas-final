@@ -52,7 +52,6 @@ const K2K_VIDEO = "https://youtu.be/biy7VCOMBD8"; // YouTube link, opens in a po
 //-------------------------------------------------------------
 // ---- LITTLE TIBET  (JOURNEY PAGE) --------------------------------
 
-
 const TIBET_PHOTO = "/images/journeys/little-tibet-hero-photo.JPG"; // card + main picture
 const TIBET_VIDEO_THUMB = "/images/journeys/little-tibet-hero-photo.JPG"; // VIDEO thumbnail
 const TIBET_ROAD = "/images/journeys/little-tibet-road.png"; // road thumbnail
@@ -61,12 +60,19 @@ const TIBET_VIDEO = "https://youtu.be/XXXXXXXXXXX"; // YouTube link, opens in a 
 
 //-------------UPPER MUSTANG (JOURNEY PAGE) --------------------------------
 const MUSTANG_PHOTO = "/images/journeys/Upper-Mustang-hero-photo.png"; // card + main picture
-const MUSTANG_VIDEO_THUMB = "/images/journeys/mustang-hero-photo.png"; // VIDEO thumbnail
-const MUSTANG_ROAD = "/images/journeys/mustang-road.JPG"; // road thumbnail
-const MUSTANG_CAMP = "/images/journeys/mustang-camp.JPG"; // stay thumbnail
+const MUSTANG_VIDEO_THUMB = "/images/journeys/Upper-Mustang-hero-photo.png"; // VIDEO thumbnail
+const MUSTANG_ROAD = "/images/journeys/upper-mustang-road.png"; // road thumbnail
+const MUSTANG_CAMP = "/images/journeys/upper-mustang-camp.png"; // stay thumbnail
 const MUSTANG_VIDEO = "https://youtu.be/XXXXXXXXXXX"; // YouTube link, opens in a popup
 
 
+//----------ZANSKAR (JOURNEY PAGE)HIGHWAY THROUGH HEAVEN --------------------------------
+
+const zanskar_PHOTO = "/images/journeys/zanskar-hero-photo.png"; // card + main picture
+const zanskar_VIDEO_THUMB = "/images/journeys/zanskar-hero-photo.png"; // VIDEO thumbnail
+const zanskar_ROAD = "/images/journeys/zanskar-road.png";
+const zanskar_CAMP = "/images/journeys/zanskar-camp.png"; // stay thumbnail
+const zanskar_VIDEO = "https://youtu.be/XXXXXXXXXXX"; // YouTube link, opens in a popup
 
 
 // The folder name has spaces, so they are written as %20 (safe for Next.js).
@@ -275,7 +281,19 @@ export const IMAGES = {
       thumbs: [MUSTANG_VIDEO_THUMB, MUSTANG_ROAD, MUSTANG_CAMP], // video, road, stay
       stages: UPPER_MUSTANG_STAGES,
     }),
-    heaven: tour(6),
+    heaven: tour(6,{
+      card: zanskar_PHOTO,
+      heroVideo: "/videos/journeys/Highway-through-heaven-hero-video.mp4",
+      video: zanskar_VIDEO,
+      thumbs: [zanskar_VIDEO_THUMB, zanskar_ROAD, zanskar_CAMP], // video, road, stay
+      stages: Array(6).fill(null)
+
+
+
+
+
+
+    }),
 
 
 
