@@ -59,7 +59,12 @@ const TIBET_ROAD = "/images/journeys/little-tibet-road.png"; // road thumbnail
 const TIBET_CAMP = "/images/journeys/little-tibet-camp.JPG"; // stay thumbnail
 const TIBET_VIDEO = "https://youtu.be/XXXXXXXXXXX"; // YouTube link, opens in a popup
 
-
+//-------------UPPER MUSTANG (JOURNEY PAGE) --------------------------------
+const MUSTANG_PHOTO = "/images/journeys/Upper-Mustang-hero-photo.png"; // card + main picture
+const MUSTANG_VIDEO_THUMB = "/images/journeys/mustang-hero-photo.png"; // VIDEO thumbnail
+const MUSTANG_ROAD = "/images/journeys/mustang-road.JPG"; // road thumbnail
+const MUSTANG_CAMP = "/images/journeys/mustang-camp.JPG"; // stay thumbnail
+const MUSTANG_VIDEO = "https://youtu.be/XXXXXXXXXXX"; // YouTube link, opens in a popup
 
 
 
@@ -74,6 +79,18 @@ const LADAKH_STAGES = [
   `${LADAKH_DIR}/Stage-5-Changpa-camp.JPG`, // stage 5
   `${LADAKH_DIR}/Stage6-Umling-La.JPG`, // stage 6
   `${LADAKH_DIR}/Stage-7-Tso-Morir.JPG`, // stage 7
+];
+
+
+
+// stages -------------------------------------------
+const UPPER_MUSTANG_DIR  = "/images/journeys/Upper%20Mustang%20&%20Manang"; // 7 photos
+const UPPER_MUSTANG_STAGES = [
+  `${UPPER_MUSTANG_DIR}/stage1.png`, // stage 1
+  `${UPPER_MUSTANG_DIR}/stage2.png`, // stage 2
+  `${UPPER_MUSTANG_DIR}/stage3.png`, // stage 3
+  `${UPPER_MUSTANG_DIR}/stage4.png`, // stage 4
+  `${UPPER_MUSTANG_DIR}/Stage 5 Kora La border marker.png`, // stage 5
 ];
 
 
@@ -251,7 +268,13 @@ export const IMAGES = {
       thumbs: [LADAKH_VIDEO_THUMB, LADAKH_ROAD, LADAKH_CAMP], // video, road, stay
       stages: LADAKH_STAGES,
     }),
-    mustang: tour(5),
+    mustang: tour(5,{
+      card: MUSTANG_PHOTO,
+      heroVideo: "/videos/journeys/Upper-Mustang-hero-video.mp4",
+      video: MUSTANG_VIDEO,
+      thumbs: [MUSTANG_VIDEO_THUMB, MUSTANG_ROAD, MUSTANG_CAMP], // video, road, stay
+      stages: UPPER_MUSTANG_STAGES,
+    }),
     heaven: tour(6),
 
 
@@ -266,12 +289,11 @@ export const IMAGES = {
   }),
 
 
-  
-
-
     bhutan: tour(5),
     rajasthan: tour(6),
     goa: tour(6),
+
+
 
     k2k: tour(6, {
       card: K2K_PHOTO,
