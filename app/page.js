@@ -49,7 +49,7 @@ export default function Home() {
       <section className={styles.intro}>
         <div className="wrap">
           <p>
-            From the highest passes in Ladakh to the Rajasthan desert, the Goa coast and the tea gardens of Assam. A road
+           From the Himalayas to India’s southernmost tip and everything in between. A road
             captain, a mechanic and support vehicles on every journey. We handle the permits, the hotels and the spares. You ride.
           </p>
         </div>

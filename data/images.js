@@ -188,7 +188,7 @@ export const IMAGES = {
     heroVideo: "/videos/home/hero-promo.mp4", // 16:9 drone video (.mp4)
     gallery: [
       "/images/home/pangong-shoreline-bikes.png", // 1 wide
-      "/images/home/prayer-flags-khardung-la.png", // portrait
+      "/images/home/Summit-Celebration-at-Umling-La.png", // portrait
       "/images/home/rider-portrait-chang-la.png", // portrait
       "/images/home/Shyok-road-water-crossing.png", // portrait
       "/images/home/group-tso-moriri-camp.png", // portrait

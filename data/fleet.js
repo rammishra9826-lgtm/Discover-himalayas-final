@@ -15,7 +15,7 @@ export const BIKES = [
     label: "Himalayan 411, Spiti valley",
     tone: "cool",
     src: IMAGES.fleet.bikes[1],
-    text: "The bike that carried our tours for years before the 450 arrived, and still on the fleet for Rajasthan. 411cc, air-cooled, unhurried and very hard to upset. Lower seat than the 450, which some riders prefer on the long days. Same insurance, fuel, oil and spares included.",
+    text: "The bike that carried our tours for years before the 450 arrived, and still on the fleet for Rajasthan. 411cc, air-cooled, unhurried and very hard to upset. Lower seat than the 450, which some riders prefer on the long days.  with third party insurance, fuel, oil and spares included.",
   },
   {
     name: "Royal Enfield Bullet 500",
