@@ -10,15 +10,15 @@ export const PAST = [
   {
     "when": "Aug 2026",
     "tour": "ladakh",
-    "riders": "[n] riders from [countries]",
-    "note": "[A line about this departure — weather, a standout day, something that happened.]",
+    "riders": "15 Riders from Germany, UK, Switzerland, USA and Singapore. ",
+    "note": " A wonderful journey across the highest passes on earth",
     "video": "https://youtu.be/VRlEH-tSUUw"
   },
   {
-    "when": "Jul 2026",
+    "when": "July 2024",
     "tour": "tibet",
-    "riders": "[n] riders from [countries]",
-    "note": "[A line about this departure.]",
+    "riders": " 7 Riders from Switzerland, Belgium, Germany and India.",
+    "note": "Our signature journey; an exploration of the unique melting pot of Hindu and Buddhist cultures beyond the Great Himalayan Ranges",
     "video": "https://youtu.be/eSzWG6mh5k4"
   },
   {
@@ -32,8 +32,8 @@ export const PAST = [
   {
     "when": "Feb 2026",
     "tour": "k2k",
-    "riders": "[n] riders from [countries]",
-    "note": "[A line about this departure.]",
+    "riders": "17 Riders from Germany, UK, Switzerland and Portugal.",
+    "note": "A fantastic journey through several coffee, tea and spice plantations of South India, across several wildlife sanctuaries",
     "video": "https://youtu.be/4GNGrHnER7g"
   },
   {
@@ -44,17 +44,17 @@ export const PAST = [
     "video": ""
   },
   {
-    "when": "Jan 2026",
+    "when": "FEB 2026",
     "tour": "goa",
-    "riders": "[n] riders from [countries]",
-    "note": "[A line about this departure.]",
+    "riders": "8 riders. Private tour with friends from UK.",
+    "note": "Enjoying the Golden Beaches of Goa, riding over the Western Ghats with a visit to the architectural wonders of the Deccan Plateau",
     "video": ""
   },
   {
-    "when": "Aug 2025",
-    "tour": "ladakh",
-    "riders": "[n] riders from [countries]",
-    "note": "[A line about this departure.]",
+    "when": "Aug 2023",
+    "tour": "heaven",
+    "riders": "11 Riders from Germany.",
+    "note": "Adventure inside the hidden valleys of the Great Himalayan Range and beyond the Indus Valley",
     "video": ""
   },
   {

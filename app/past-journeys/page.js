@@ -25,7 +25,7 @@ export default function PastJourneysPage() {
         <div className="wrap">
           {/* PLACEHOLDER note from the client prototype: delete this box once real departures are added in data/past.js */}
           <div className="note">
-            Placeholder entries — replace with real departures, the group photo, a short video and three stills from each ride. Newest first.
+            
           </div>
           <div className={styles.grid}>
             {PAST.map((p, i) => (

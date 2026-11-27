@@ -185,7 +185,7 @@ export const TOURS = {
     "itin": []
   },
   "bhutan": {
-    "name": "Land of the Thunder ",
+    "name": "Land of Thunder ",
     "region": "Bhutan",
     "country": "Bhutan",
     "days": 11,
@@ -270,7 +270,7 @@ export const TOURS = {
     "itin": []
   },
   "heaven": {
-    "name": "Highway through Heaven",
+    "name": "Highway through  Heaven",
     "region": "Zanskar",
     "country": "India",
     "days": 14,
