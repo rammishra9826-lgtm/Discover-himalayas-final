@@ -19,7 +19,7 @@ function getYouTubeId(url) {
 
 /** One past departure on /past-journeys. */
 export default function PastCard({ item, index }) {
-  const t = TOURS[item.tour];
+  const t = { ...TOURS[item.tour], ...(item.title && { name: item.title }) };
   const videoId = getYouTubeId(item.video);
   const [open, setOpen] = useState(false);       // video panel DOM mein hai ya nahi
   const [closing, setClosing] = useState(false); // video panel band hone ki animation

@@ -220,16 +220,18 @@ export const IMAGES = {
   past: {
     heroVideo: "/videos/Past-journeys/pastjourney-hero.mp4", // 16:9 drone video (.mp4)
     passport: null,
-    // one entry per departure in data/past.js, same order
-    groups: [null, null, null, null, null, null],
+    // one entry per departure in data/past.js, same order (8 now)
+    groups: [null, null, null, null, null, null, null, null],
     // photos of each departure (open in the lightbox), same order as data/past.js
     photos: [
-      HIGHEST_ROAD_PHOTOS, // 1
-      [], //2
-      WILDLIFE_AND_SPICE_TRAIL_PHOTOS, // 3
-      [], //  4
-      GHATS_AND_GOA_PHOTOS, // 5
-      HIGHEST_ROAD_PHOTOS_2025, // 6
+      HIGHEST_ROAD_PHOTOS, // 1 Aug 2026 Ladakh
+      [], // 2 Jul 2026 Little Tibet
+      [], // 3 Apr 2026 K to K for WSMBA
+      WILDLIFE_AND_SPICE_TRAIL_PHOTOS, // 4 Feb 2026 K2K
+      [], // 5 Jan 2026 Rajasthan
+      GHATS_AND_GOA_PHOTOS, // 6 Jan 2026 Goa
+      HIGHEST_ROAD_PHOTOS_2025, // 7 Aug 2025 Ladakh
+      [], // 8 Nov 2023 K to K for Saving Lives
     ],
   },
   custom: {
