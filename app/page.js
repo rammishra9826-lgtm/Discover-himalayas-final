@@ -89,7 +89,7 @@ export default function Home() {
             <div>
               <h2>The fleet</h2>
               <p className="lead mute">
-                Bikes chosen for the road we're riding, serviced by our own mechanic, with insurance, fuel, oil and spares included.
+                Bikes chosen for the road we're riding, serviced by our own mechanic,with third party insurance, fuel, oil and spares included.
                 Support vehicles follow every day with the luggage, and with a seat for anyone who'd rather not ride a stretch.
               </p>
             </div>
