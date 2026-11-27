@@ -269,6 +269,9 @@ export const IMAGES = {
   },
 
   // Each journey below has its own values. Fill the others the same way as Ladakh.
+
+
+  //  JOURNEYS KA PART YAHA HAI 
   tours: {
     ladakh: tour(7, {
       card: LADAKH_PHOTO,
@@ -279,14 +282,14 @@ export const IMAGES = {
     }),
     mustang: tour(5, {
       card: MUSTANG_PHOTO,
-      heroVideo: "/videos/journeys/Upper-Mustang-hero-video.mp4",
+      heroVideo: "/videos/journeys/Ladakh-hero-video.mp4",
       video: MUSTANG_VIDEO,
       thumbs: [MUSTANG_VIDEO_THUMB, MUSTANG_ROAD, MUSTANG_CAMP], // video, road, stay
       stages: UPPER_MUSTANG_STAGES,
     }),
-    heaven: tour(6, {
+    heaven: tour(6, {//ZANSKAR 
       card: zanskar_PHOTO,
-      heroVideo: "/videos/journeys/Highway-through-heaven-hero-video.mp4",
+      heroVideo: "/videos/journeys/Ladakh-hero-video.mp4",
       video: zanskar_VIDEO,
       thumbs: [zanskar_VIDEO_THUMB, zanskar_ROAD, zanskar_CAMP], // video, road, stay
       stages: zanskar_STAGES,
@@ -294,7 +297,7 @@ export const IMAGES = {
 
     tibet: tour(5, {
       card: TIBET_PHOTO,
-      heroVideo: "/videos/journeys/Little-Tibet-hero-video.mp4",
+      heroVideo: "/videos/journeys/Ladakh-hero-video.mp4",
       video: TIBET_VIDEO,
       thumbs: [TIBET_VIDEO_THUMB, TIBET_ROAD, TIBET_CAMP], // video, road, stay
       stages: little_tibet_STAGES,
@@ -306,7 +309,7 @@ export const IMAGES = {
 
     k2k: tour(6, {
       card: K2K_PHOTO,
-      heroVideo: "/videos/journeys/Konkan-kanyakumari-hero-video.mp4",
+      heroVideo: "/videos/journeys/Ladakh-hero-video.mp4",
       video: K2K_VIDEO,
       thumbs: [K2K_VIDEO_THUMB, K2K_ROAD, K2K_CAMP], // video, road, stay
     }),

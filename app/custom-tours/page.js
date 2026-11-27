@@ -20,9 +20,9 @@ const STEPS = [
 
 // PLACEHOLDER examples from the client prototype: replace with three real custom tours
 const CASES = [
-  { title: "[Club name], 12 riders — Zanskar and Ladakh, 16 days", line: "[One line: what they asked for and what made the ride theirs.]", tone: "default" },
-  { title: "[Family name], 6 riders and 3 pillions — Rajasthan, 10 days", line: "[One line.]", tone: "warm" },
-  { title: "[Company name], 18 riders — Spiti offsite, 8 days", line: "[One line.]", tone: "green" },
+  { title: "Israeli father and his 7 sons", line: "[One line: what they asked for and what made the ride theirs.]", tone: "default" },
+  { title: "K to K Saving Lives 2023 ", line: "[One line.]", tone: "warm" },
+  { title: "K to K WSMBA 2026", line: "[One line.]", tone: "green" },
 ];
 
 export default function CustomToursPage() {
